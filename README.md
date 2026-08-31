@@ -1,76 +1,63 @@
-# D-Lab AI Pulse: Spring 2026
+# D-Lab AI Pulse
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-AI Pulse is UC Berkeley D-Lab's bi-weekly online workshop series on AI tools for research and academia. Each 50-minute session features a live demo (~30 min) followed by open discussion (~20 min).
+AI Pulse is UC Berkeley D-Lab's bi-weekly online workshop series on AI tools for research and academia. Sessions run 50 minutes and alternate between **wide-view sessions** on where AI actually stands and **hands-on sessions** that walk through specific tools, with discussion running throughout rather than saved for the end.
 
 No prior experience with AI tools required! Check out D-Lab's [Workshop Catalog](https://dlab-berkeley.github.io/dlab-workshops/) to browse all workshops.
 
 ---
 
-The Spring 2026 series concluded on April 28, 2026. Stay tuned for future seasons.
+## Fall 2026
+
+Bi-weekly on Tuesdays, opening 1 September 2026. Slides and materials are published here after each session runs.
+
+### Session 1 (September 1, 2026): The State of AI
+
+**Wide-view** | *Materials to follow.*
+
+In this workshop we will discuss how AI arrived at where it stands today, and where it has been used effectively — and where it hasn't. We start with the many ways of interacting with AI, from chats to agentic workflows, then turn to practical concerns such as which model tier is appropriate for each task. Participants should leave with a map of the current tools, applications and buzzwords, and a sense of where to start.
+
+### Session 2 (September 15, 2026): The Major AI Ecosystems — Anthropic and OpenAI
+
+**Hands-on** | *Materials to follow.*
+
+As AI subscriptions become a real expense rather than a token one, one of the first questions after deciding to get hands-on is which environment to sign up for. In this workshop we will compare the two largest, Anthropic's and OpenAI's, looking at what they have in common and where they genuinely differ, along with the practical details: what each plan costs, what comes for free, what each company is building beyond the chat window, and what they do with your data. Participants should leave knowing which ecosystem best fits their own work and budget, and how to get started.
+
+### Session 3 (September 29, 2026): AI in the News
+
+**Wide-view** | *Materials to follow.*
+
+In just a few years, AI went from a novelty you tried online to a fixture in the news. In this workshop we will go through a handful of the most consequential AI stories of the past year, from stand-offs with defence agencies to models breaking containment, unpacking the technical terms and following each one through to how it actually ended. For each we will propose a set of open questions, ethical, social and political, and open the floor. Participants should leave with a clear picture of stories they may only have half-followed, and with a range of views on what those stories mean, gathered from across the campus community.
+
+*More sessions to be announced.*
 
 ---
 
-## Previous Workshops
+## How this repository is organised
 
-### Session 1 (January 27, 2026): Coding AI
+Each workshop is a self-contained folder:
 
-**Tools**: Claude Code, Gemini CLI | [Materials](Workshops/2026-01-27_Claude_Code_Workshop/)
+```
+Workshops/<Season-Year>/<YYYY-MM-DD>_<Workshop_Name>/
+├── README.md                   # what the session covered
+├── slides/
+│   ├── workshop_slides.tex     # LaTeX Beamer source
+│   └── workshop_slides.pdf     # compiled slides
+├── demos/                      # data, scripts, prompts and codebooks used live
+├── dry_run_output.md           # pre-generated demo output, in case a live demo fails
+└── SOURCE.md                   # where to get external data not tracked here
+```
 
-Our inaugural session introduced AI-powered coding assistants that work directly in the terminal. We demoed **Claude Code** and **Gemini CLI** on real research tasks: generating and documenting code, navigating unfamiliar codebases, consolidating messy datasets, and running linear regressions, all through natural language conversation.
+Not every session has every file. Wide-view sessions carry no `demos/`, and only some sessions publish their LaTeX source.
 
-The session showed how these tools can save researchers hours on routine programming tasks, even if you're not a software developer.
+Slides are built with `pdflatex workshop_slides.tex` from inside a session's `slides/` directory.
 
-### Session 2 (February 10, 2026): Scientific AI
+---
 
-**Tools**: Perplexity, Consensus, Elicit, Kosmos | [Materials](Workshops/2026-02-10_Scientific_AI/)
+## Past seasons
 
-General-purpose AI has a citation problem: studies show ChatGPT fabricates roughly 1 in 5 academic references. This session walked through specialized research tools designed to solve this: **Perplexity** for quick context with verified sources, **Consensus** for evidence synthesis across peer-reviewed literature, and **Elicit** for systematic reviews and data extraction.
-
-We also took a first look at **Kosmos**, an autonomous research agent that reads ~1,500 papers and writes ~42,000 lines of code over 12 hours to produce a research report. We discussed when to trust (and not trust) any of these tools.
-
-### Session 3 (February 24, 2026): AI for Teaching, Learning and Collaborating
-
-**Tools**: NotebookLM, Khanmigo, Microsoft Study, SciSpace | [Materials](Workshops/2026-02-24_Teaching_Learning_Collaborating/)
-
-How can AI help you learn, teach, and work with others? This session explored **NotebookLM**, Google's source-grounded AI that generates podcasts, flashcards, study guides, and more from your own documents. Answers come from your sources, not the internet. We walked through 9 live demos covering exam prep, literature synthesis, course material creation, policy navigation, and collaborative research workflows.
-
-We also discussed the rise of AI homework agents, AI humanizers, and what they mean for how we think about assessments.
-
-### Session 4 (March 10, 2026): LLMs for Qualitative Work
-
-**Tools**: Gemini, NotebookLM | [Materials](Workshops/2026-03-10_LLMs_for_Qualitative_Work/)
-
-AI tools have transformed quantitative research workflows, but qualitative researchers have been largely left out of the conversation. This session explored how LLMs fit into qualitative work through five live demos: grounded document analysis with **NotebookLM**, dialogical qualitative coding, multimodal analysis of photos and video, structured text extraction from open-ended responses, and piloting research designs with simulated participants.
-
-We also discussed the unique risks LLMs pose for interpretive work and where human judgment remains essential in the analysis loop.
-
-### Session 5 (March 17, 2026): AI for Teaching, Learning and Collaborating
-
-**Tools**: NotebookLM | [Materials](Workshops/2026-03-17_Teaching_Learning_Collaborating/)
-
-How can AI help you learn, teach, and work with others? This session explored **NotebookLM**, Google's source-grounded AI that generates podcasts, flashcards, study guides, and more from your own documents. Answers come from your sources, not the internet. We walked through 9 live demos covering exam prep, literature synthesis, course material creation, policy navigation, and collaborative research workflows.
-
-We also discussed the rise of AI homework agents, AI humanizers, and what they mean for how we think about assessments.
-
-### Session 6 (March 31, 2026): AI in Science Case Studies
-
-[Materials](Workshops/2026-03-31_AI_in_Science_Case_Studies/)
-
-This session walked through six real case studies of researchers who successfully used AI in their scientific work, across astronomy, biology, social science, theoretical physics, chemistry, and mathematics. For each case we covered the complete workflow, how they customized the AI interaction, and where things went wrong.
-
-### Session 7 (April 14, 2026): Running Your Own AI
-
-[Materials](Workshops/2026-04-14_Running_Own_AI/)
-
-This session covered the full lifecycle of running your own AI: from downloading a model to your laptop, to fine-tuning it on a server, to deploying it in the cloud through Hugging Face. We covered what a large language model actually is and how it works under the hood, installing and running a model locally with **Ollama** (no internet, subscription, or API key required), context windows and quantization, and fine-tuning with **LoRA** on the free **National Research Platform** GPU cluster. As a running application, we built a personalized writing partner that knows a physics subfield's notation, style, and structure.
-
-### Session 8 (April 28, 2026): What's New in AI: A 2026 Recap
-
-[Materials](Workshops/2026-04-28_Whats_New_in_AI/)
-
-The Spring 2026 wrap-up. This session toured what changed in 2026 across three acts: what happened in the last few months (MCP and customizable AI through Skills and Artifacts, agents that act on their own with Claude Code and OpenClaw, automated research from Karpathy and Sakana, and Anthropic's expansion into design, consulting, healthcare, and finance), what's happening now (Anthropic's Mythos and Project Glasswing, the AI-for-math wave, and AI's broader societal footprint in defense and energy), and what the future looks like (the centralization debate and post-LLM architectures including world models and Ineffable Intelligence).
+- **[Spring 2026](Previous-Workshops/Spring-2026/)** — the first season. Eight sessions from January to April 2026, covering coding assistants, specialised research tools, teaching and learning, qualitative work, science case studies, running models locally, and a year-in-review.
 
 ---
 

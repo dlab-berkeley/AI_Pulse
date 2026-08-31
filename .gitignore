@@ -29,8 +29,8 @@ venv/
 *.rds
 
 # Large CSV files (but keep demo1 sample data)
-Workshops/2026-01-27_Claude_Code_Workshop/demo4_data_consolidation/**/*.csv
-!Workshops/2026-01-27_Claude_Code_Workshop/demo1_linear_regression/productivity_study.csv
+Previous-Workshops/Spring-2026/2026-01-27_Claude_Code_Workshop/demo4_data_consolidation/**/*.csv
+!Previous-Workshops/Spring-2026/2026-01-27_Claude_Code_Workshop/demo1_linear_regression/productivity_study.csv
 
 # Julia
 *.jl.cov
@@ -48,39 +48,42 @@ Thumbs.db
 *.swo
 
 # Large folders excluded via SOURCE.md
-Workshops/2026-01-27_Claude_Code_Workshop/demo2_julia_documentation/DSGE.jl-main/
-Workshops/2026-01-27_Claude_Code_Workshop/demo4_data_consolidation/fred/
-Workshops/2026-01-27_Claude_Code_Workshop/demo4_data_consolidation/michigan/
-Workshops/2026-01-27_Claude_Code_Workshop/demo4_data_consolidation/spf/
+Previous-Workshops/Spring-2026/2026-01-27_Claude_Code_Workshop/demo2_julia_documentation/DSGE.jl-main/
+Previous-Workshops/Spring-2026/2026-01-27_Claude_Code_Workshop/demo4_data_consolidation/fred/
+Previous-Workshops/Spring-2026/2026-01-27_Claude_Code_Workshop/demo4_data_consolidation/michigan/
+Previous-Workshops/Spring-2026/2026-01-27_Claude_Code_Workshop/demo4_data_consolidation/spf/
 
 # Nested git repos (separate remotes)
-Workshops/2026-02-10_Scientific_AI/slides/AI_Pulse_Scientific/
+Previous-Workshops/Spring-2026/2026-02-10_Scientific_AI/slides/AI_Pulse_Scientific/
 
 # Screenshots (referenced from slides but not needed in repo)
-Workshops/2026-02-10_Scientific_AI/690ac9822b6bc833f1f47b8a_Screenshot_2025-11-04_at_11.32.50_AM.png
-Workshops/2026-02-10_Scientific_AI/690ac9c1d363c9893d2c868f_Screenshot_2025-11-04_at_11.33.15_AM.png
+Previous-Workshops/Spring-2026/2026-02-10_Scientific_AI/690ac9822b6bc833f1f47b8a_Screenshot_2025-11-04_at_11.32.50_AM.png
+Previous-Workshops/Spring-2026/2026-02-10_Scientific_AI/690ac9c1d363c9893d2c868f_Screenshot_2025-11-04_at_11.33.15_AM.png
 
 # Workshop scripts (presenter notes, not for public repo)
 workshop_script.md
 
 # Workshop images (referenced from slides but not needed in repo)
-Workshops/2026-02-24_Teaching_Learning_Collaborating/karpathy_tweet.png
-Workshops/2026-03-17_Teaching_Learning_Collaborating/karpathy_tweet.png
+Previous-Workshops/Spring-2026/2026-02-24_Teaching_Learning_Collaborating/karpathy_tweet.png
+Previous-Workshops/Spring-2026/2026-03-17_Teaching_Learning_Collaborating/karpathy_tweet.png
 
 # Previous workshop LaTeX auxiliary files
-Workshops/2026-02-24_Teaching_Learning_Collaborating/slides/*.aux
-Workshops/2026-02-24_Teaching_Learning_Collaborating/slides/*.log
-Workshops/2026-02-24_Teaching_Learning_Collaborating/slides/*.nav
-Workshops/2026-02-24_Teaching_Learning_Collaborating/slides/*.out
-Workshops/2026-02-24_Teaching_Learning_Collaborating/slides/*.snm
-Workshops/2026-02-24_Teaching_Learning_Collaborating/slides/*.toc
-Workshops/2026-02-24_Teaching_Learning_Collaborating/slides/*.vrb
-Workshops/2026-02-24_Teaching_Learning_Collaborating/slides/*.fdb_latexmk
-Workshops/2026-02-24_Teaching_Learning_Collaborating/slides/*.fls
-Workshops/2026-02-24_Teaching_Learning_Collaborating/slides/*.synctex.gz
-
-# Current workshop (in progress, not ready for repo)
-LLMs for Qualitative Work/
+Previous-Workshops/Spring-2026/2026-02-24_Teaching_Learning_Collaborating/slides/*.aux
+Previous-Workshops/Spring-2026/2026-02-24_Teaching_Learning_Collaborating/slides/*.log
+Previous-Workshops/Spring-2026/2026-02-24_Teaching_Learning_Collaborating/slides/*.nav
+Previous-Workshops/Spring-2026/2026-02-24_Teaching_Learning_Collaborating/slides/*.out
+Previous-Workshops/Spring-2026/2026-02-24_Teaching_Learning_Collaborating/slides/*.snm
+Previous-Workshops/Spring-2026/2026-02-24_Teaching_Learning_Collaborating/slides/*.toc
+Previous-Workshops/Spring-2026/2026-02-24_Teaching_Learning_Collaborating/slides/*.vrb
+Previous-Workshops/Spring-2026/2026-02-24_Teaching_Learning_Collaborating/slides/*.fdb_latexmk
+Previous-Workshops/Spring-2026/2026-02-24_Teaching_Learning_Collaborating/slides/*.fls
+Previous-Workshops/Spring-2026/2026-02-24_Teaching_Learning_Collaborating/slides/*.synctex.gz
 
 # Session 7: include LaTeX source
-!Workshops/2026-04-14_Running_Own_AI/slides/*.tex
+!Previous-Workshops/Spring-2026/2026-04-14_Running_Own_AI/slides/*.tex
+!Previous-Workshops/Spring-2026/2026-01-27_Claude_Code_Workshop/slides/*.tex
+!Previous-Workshops/Spring-2026/2026-02-10_Scientific_AI/slides/*.tex
+!Previous-Workshops/Spring-2026/2026-04-28_Whats_New_in_AI/slides/*.tex
+
+# Fall 2026: publish LaTeX source for all sessions
+!Workshops/Fall-2026/**/slides/*.tex
