@@ -64,6 +64,7 @@ Previous-Workshops/Spring-2026/2026-02-10_Scientific_AI/690ac9c1d363c9893d2c868f
 workshop_script.md
 
 # Workshop images (referenced from slides but not needed in repo)
+Workshops/Fall-2026/2026-09-01_State_of_AI/slides/drafting_room.jpg
 Previous-Workshops/Spring-2026/2026-02-24_Teaching_Learning_Collaborating/karpathy_tweet.png
 Previous-Workshops/Spring-2026/2026-03-17_Teaching_Learning_Collaborating/karpathy_tweet.png
 
@@ -87,3 +88,6 @@ Previous-Workshops/Spring-2026/2026-02-24_Teaching_Learning_Collaborating/slides
 
 # Fall 2026: publish LaTeX source for all sessions
 !Workshops/Fall-2026/**/slides/*.tex
+
+# Session 1: the pre-rebuild draft deck stays local (must sit AFTER the Fall-2026 un-ignore)
+Workshops/Fall-2026/2026-09-01_State_of_AI/slides/workshop_slides_draft.*

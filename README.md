@@ -14,7 +14,7 @@ Bi-weekly on Tuesdays, opening 1 September 2026. Slides and materials are publis
 
 ### Session 1 (September 1, 2026): The State of AI
 
-**Wide-view** | *Materials to follow.*
+**Wide-view** | [Materials](Workshops/Fall-2026/2026-09-01_State_of_AI/)
 
 In this workshop we will discuss how AI arrived at where it stands today, and where it has been used effectively — and where it hasn't. We start with the many ways of interacting with AI, from chats to agentic workflows, then turn to practical concerns such as which model tier is appropriate for each task. Participants should leave with a map of the current tools, applications and buzzwords, and a sense of where to start.
 

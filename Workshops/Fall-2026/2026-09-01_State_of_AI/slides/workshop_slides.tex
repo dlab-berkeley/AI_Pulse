@@ -1,0 +1,620 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{graphicx}
+
+% Global bullet spacing
+\newlength{\myitemsep}
+\setlength{\myitemsep}{9pt}
+\let\olditemize\itemize
+\renewcommand{\itemize}{\olditemize\setlength{\itemsep}{\myitemsep}}
+\let\oldenumerate\enumerate
+\renewcommand{\enumerate}{\oldenumerate\setlength{\itemsep}{\myitemsep}}
+
+% ============================================================
+%  HOUSE STYLE (agreed with Bruno, 2 Sept 2026)
+%    - No em-dashes. Use colons.
+%    - No boldface anywhere.
+%    - No loose "punchline" sentence at the foot of a slide.
+%    - American spelling.
+%    - Citations live on the References slide at the end.
+% ============================================================
+
+\title{The State of AI}
+\subtitle{D-Lab AI Pulse, Fall 2026: Session 1}
+\author[D-Lab]{Materials: \url{https://github.com/dlab-berkeley/AI_Pulse}\\Workshop suggestions: \url{https://forms.gle/x8KfejgCViE7t6iQA}}
+\date{1 September 2026}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Today's Roadmap}
+    \begin{itemize}\setlength{\itemsep}{7pt}
+        \item AI Pulse is D-Lab's bi-weekly series on AI tools for academia, no experience required!
+        \item Part 1, where things stand, what changed, what exists now, and what it costs
+        \item Part 2, what agents can do, and are these tools actually working?
+        \item Part 3, how your role changes, what to hand over, and what that leaves you doing
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{This Semester}
+    Eight sessions, 1 September to 8 December. Every other Tuesday.
+
+    \vspace{1em}
+    \begin{itemize}
+        \item Workshops alternate: ``wide-view'' sessions, and hands-on sessions with demos
+        \item Office hours on the weeks in between, same day and time, on Zoom
+        \item Office hours are for your actual problem: getting a tool working, or working out
+              which one fits what you are trying to do
+        \item Coming up: The Major AI Ecosystems (15 Sept) and AI in the News (29 Sept)
+        \item Materials: \url{https://github.com/dlab-berkeley/AI_Pulse} $\cdot$
+              D-Lab: \url{https://dlab.berkeley.edu}
+    \end{itemize}
+\end{frame}
+
+% ============================================================
+%  PART 1
+% ============================================================
+
+\begin{frame}[plain]
+    \vfill
+    \begin{center}
+        {\Huge Part 1}\\[0.8em]
+        {\Large Where Things Stand}
+    \end{center}
+    \vfill
+\end{frame}
+
+% Gowers quote verified: Timothy Gowers on the Erdos unit distance proof,
+% "I would have recommended acceptance without any hesitation."
+% Unit distance conjecture posed 1946, disproved 20 May 2026 by an internal OpenAI
+% general-purpose reasoning model. Constructive proof, externally verified.
+\begin{frame}{How We Got Here}
+    \begin{itemize}\setlength{\itemsep}{7pt}
+        \item 2017: \textit{Attention Is All You Need}, the architecture behind all of it
+        \item 2020: AlphaFold 2 solves protein folding, earning its authors the 2024
+              Nobel Prize in Chemistry
+        \item 2022: ChatGPT opens to the public, five years after the paper
+        \item 2025: Claude Code. AI goes from chats to agents
+        \item May 2026: the first AI-produced proof of a major open problem. An 80-year-old
+              Erd\H{o}s conjecture, reasoned through rather than searched for
+    \end{itemize}
+
+    \vspace{0.9em}
+    Timothy Gowers, Fields Medallist: \textit{``if a human had written the paper and
+    submitted it to the Annals of Mathematics \ldots I would have recommended acceptance
+    without any hesitation.''}
+\end{frame}
+
+\begin{frame}{From Chat to Agents}
+    \begin{itemize}
+        \item 2023, chats
+        \begin{itemize}
+            \item A powered-up search engine. You asked; you copied the answer out by hand
+        \end{itemize}
+        \item 2024, files
+        \begin{itemize}
+            \item It could read your documents, and hand one back finished
+        \end{itemize}
+        \item 2025, tasks
+        \begin{itemize}
+            \item You describe the job, walk away, come back to the result
+        \end{itemize}
+        \item 2026, agents
+        \begin{itemize}
+            \item A whole team. Your job becomes that of a manager
+        \end{itemize}
+    \end{itemize}
+
+    \vspace{1.2em}
+Each step changed what you can ask for, not just how much you can hand over.
+\end{frame}
+
+% Boris Cherny X thread 2 Jan 2026; Sequoia AI Ascent 2026; Lenny's Podcast.
+% 80% figure: Anthropic, code merged to production May 2026 (VentureBeat, 4 Jun 2026).
+% 90% and 100% also circulate depending on what is counted.
+\begin{frame}{Fifteen Claudes at Once}
+    Boris Cherny, who built Claude Code, on a normal working day:
+
+    \vspace{0.8em}
+    \begin{itemize}
+        \item Fifteen running at once: five in terminals, five to ten in the browser,
+              one on his phone
+        \item Each on its own task, in its own copy of the project, so nothing collides
+        \item They test their own work before handing it back; he reviews and decides what
+              is kept
+        \item Ten to thirty finished pieces of work merged per day
+    \end{itemize}
+
+    \vspace{1.2em}
+    At Anthropic, 80\% of the code merged into production in May 2026 was written by Claude.
+\end{frame}
+
+% Gemini: Google, 11 Aug 2026, 1B monthly active users.
+% Gallup Q1 2026: 50% of US employees used AI at work, up from 46%; 28% weekly.
+% Pangram, 18 Nov 2025: 21% of ICLR 2026's 70,000 reviews fully AI-generated.
+% HEPI/Kortext 2026: 95% of 1,054 UK undergraduates; 94% on assessed work.
+% PwC Global AI Jobs Barometer 2026: AI-specialist postings +68.9% vs +8.6% overall.
+\begin{frame}{Meanwhile, Everybody Else}
+    \begin{itemize}
+        \item One billion people used Google's Gemini app last month, the fastest growth of
+              any product Google has shipped. ChatGPT is in the same range
+        \item Half of US employees used AI at work this year, up from 46\% a year ago.
+              More than a quarter use it every week
+        \item At ICLR 2026, the largest conference in machine learning, 21\% of the 70,000
+              peer reviews were fully AI-written, and over half showed some AI
+        \item 95\% of UK undergraduates use AI, 94\% of them on assessed work
+        \item Job ads asking for AI skills grew 69\% in a year, while hiring overall grew 9\%
+    \end{itemize}
+
+    \vspace{1em}
+    Is it a way of standing out, or is it necessary not to lag behind?
+\end{frame}
+
+% Photograph: 1960s drafting hall. Rights holder unidentified; gitignored, not republished.
+\begin{frame}{How Is Work Changing?}
+    \begin{columns}[c]
+    \begin{column}{0.44\textwidth}
+        \begin{center}
+        \IfFileExists{drafting_room.jpg}{%
+            \includegraphics[width=\linewidth]{drafting_room.jpg}%
+        }{%
+            \small\itshape [Photograph omitted from the public repository:\\
+            a 1960s drafting hall, rights holder unidentified.]%
+        }
+        \end{center}
+    \end{column}
+    \begin{column}{0.52\textwidth}
+        \begin{itemize}\setlength{\itemsep}{10pt}
+            \item Did engineers disappear when CAD was released?
+            \item Could engineers keep their jobs without mastering the new tech?
+            \item How long did it take for CAD to become necessary, and how long will it
+                  take for AI?
+        \end{itemize}
+    \end{column}
+    \end{columns}
+\end{frame}
+
+% Fastest-rotting slide in the deck. Re-check every product name before each delivery.
+% Devin is current: Cognition raised $1B at a $26B valuation, June 2026.
+\begin{frame}{What Is Actually Out There}
+    \begin{itemize}\setlength{\itemsep}{4pt}
+        \item General assistants: ChatGPT, Claude, Gemini, Grok
+        \vspace{2pt}\begin{itemize}\item They all do the same things now. Choose on fit, not on capability\end{itemize}
+        \item Coding platforms: Cursor, Claude Code, Devin, Copilot
+        \vspace{2pt}\begin{itemize}\item Built for code, but increasingly just run tasks. A platform, not a chatbot\end{itemize}
+        \item Research tools: NotebookLM, Elicit, Consensus
+        \vspace{2pt}\begin{itemize}\item Finding, reading and synthesizing literature, with the sources attached\end{itemize}
+        \item Generation: Midjourney, Veo, ElevenLabs, Lovable
+        \vspace{2pt}\begin{itemize}\item Images, video, voice, websites. One job each, done well\end{itemize}
+        \item Productivity: Granola, Otter, Notion
+        \vspace{2pt}\begin{itemize}\item Ready-made. They take the grunt work without you designing anything\end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Berkeley: Gemini, NotebookLM, Zoom AI Companion covered by campus agreements.
+% GEMINI CLI: Google's docs say the 1,000 req/day free tier needs a PERSONAL Google account
+% and that Workspace/EDU accounts need a paid Code Assist licence. Bruno used it on his
+% Berkeley account until ~May 2026. Hence the asterisk.
+% Plan contents: OpenAI per chatgpt.com/pricing; Anthropic per claude.com/pricing.
+\begin{frame}{What It Costs}
+    \begin{itemize}\setlength{\itemsep}{6pt}
+        \item Free with your Berkeley account: Gemini, NotebookLM and Gemini CLI$^{*}$
+        \begin{itemize}
+            \item Under the campus agreement your data does not train the model, and it
+                  reaches your Drive, Docs, Gmail and Calendar
+        \end{itemize}
+        \item OpenAI: Free $\cdot$ Go \$8 $\cdot$ Plus \$20 $\cdot$ Pro \$100 or \$200 a month
+        \begin{itemize}
+            \item Free is chat; Go adds messages, uploads and voice; Plus adds deep research
+                  and projects; Pro adds the reasoning models and research previews
+        \end{itemize}
+        \item Anthropic: Free $\cdot$ Pro \$20 $\cdot$ Max \$100 or \$200 a month
+        \begin{itemize}
+            \item Free is chat; Pro adds Claude Code, Cowork and the Microsoft 365
+                  integration; Max adds usage limits and priority access
+        \end{itemize}
+    \end{itemize}
+
+    \vspace{0.8em}
+    \begin{center}
+    Next session: OpenAI vs Anthropic in depth, with demos.
+    \end{center}
+
+    \vspace{0.4em}
+    {\small\itshape $^{*}$ Evolving situation.}
+\end{frame}
+
+% Prices verified 2 Sept 2026. Anthropic from platform.claude.com/docs; OpenAI from
+% CloudZero's table, updated 20 Aug 2026, after the 30 July cut (Terra -20%, Luna -80%).
+% Output costs ~5x input in every row, both vendors.
+% Table is a deliberate exception to the no-boxes rule: six prices need columns.
+\begin{frame}{What a Token Costs}
+    \begin{itemize}\setlength{\itemsep}{5pt}
+        \item A token is the fundamental unit of information for AI: roughly three quarters
+              of a word
+        \item You pay for what you send in, and again for what comes back
+        \item Output costs roughly five times input, in every model, from both vendors
+    \end{itemize}
+
+    \vspace{0.6em}
+    \begin{center}
+    \small
+    \begin{tabular}{lrr@{\hskip 2.2em}lrr}
+        \toprule
+        \multicolumn{3}{c}{Anthropic} & \multicolumn{3}{c}{OpenAI} \\
+        \cmidrule(r){1-3}\cmidrule(l){4-6}
+        Model & In & Out & Model & In & Out \\
+        \midrule
+        Fable 5     & \$10 & \$50 & GPT-5.6 Sol   & \$5    & \$30   \\
+        Opus 5      & \$5  & \$25 & GPT-5.6 Terra & \$2    & \$12   \\
+        Sonnet 5    & \$2  & \$10 & GPT-5.6 Luna  & \$0.20 & \$1.20 \\
+        Haiku 4.5   & \$1  & \$5  &               &        &        \\
+        \bottomrule
+    \end{tabular}
+    \\[0.3em]
+    {\scriptsize US dollars per million tokens. September 2026.}
+    \end{center}
+\end{frame}
+
+% LMArena, September 2026: blind pairwise voting. Top five within 20 Elo points;
+% #1 to #10 is 32 points. #1 is Claude Opus 4.6 (Fast) at 1500, AHEAD of the newer
+% Fable 5 at 1494. Gemini 3.5 Flash, a cheap fast model, is #4 at 1480.
+% Fable 5 input is 50x Luna's ($10 vs $0.20).
+\begin{frame}{Older Models Are Good Enough}
+    \begin{itemize}\setlength{\itemsep}{7pt}
+        \item On LMArena, where people vote blind on which of two answers they prefer, the
+              top five models sit within 10 points of each other
+        \item Second place goes to Claude Opus 4.6, a model two generations old, two points
+              behind the leader and at half the price
+        \item Gemini 3.7 Flash sits ninth, 17 points off the top, at a thirteenth of the
+              leader's input price
+        \item What decides is interface, price, privacy rules, and what your institution
+              already pays for
+        \item We have reached a stage in which the best option is not the best model
+    \end{itemize}
+\end{frame}
+
+% ============================================================
+%  PART 2
+% ============================================================
+
+\begin{frame}[plain]
+    \vfill
+    \begin{center}
+        {\Huge Part 2}\\[0.8em]
+        {\Large What Agents Do, and Whether It Works}
+    \end{center}
+    \vfill
+\end{frame}
+
+\begin{frame}{What Makes It an Agent}
+    \begin{itemize}\setlength{\itemsep}{7pt}
+        \item A chat produces text. You are still the one who acts on it
+        \item An agent can open, read, write, run and check things itself
+        \item The model underneath is the same. What is new is access and permission,
+              not intelligence
+        \item It started with code because code checks itself: it runs or it does not,
+              and the tests pass or they fail
+        \item So the model can try, fail and fix before a human sees anything, and keep
+              going until the task is done or it needs you
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{What an Agent Can Reach}
+    \begin{itemize}\setlength{\itemsep}{6pt}
+        \item Your files: read them, edit them, write new ones
+        \item Your calendar, mail and notes, through MCP, the common standard that lets tools
+              connect to each other
+        \item Code: write it, run it, read the error, fix it, run it again
+        \item The internet: search it, open pages, and use what it finds
+        \item Your team's tools: GitHub, Slack, Jira and the like, through that same standard
+        \item Time and place: start a task from your phone, or schedule it to run every day
+    \end{itemize}
+\end{frame}
+
+% Gateways: OpenRouter, LiteLLM. One interface, many models, no rewriting to switch.
+\begin{frame}{Beyond the Main AI Apps}
+    \begin{itemize}\setlength{\itemsep}{6pt}
+        \item Context is the constraint for repeated, independent tasks: an agent carries one
+              conversation, and a thousand items need a thousand clean starts
+        \item So for the same operation across thousands of items, you call the model directly
+              through its API instead
+        \item A gateway such as OpenRouter or LiteLLM sends that call to any model, and lets
+              you switch models without rewriting anything
+        \item Four thousand PDFs, one extraction schema, one spreadsheet of results
+        \item You can also adapt an open model such as Llama to one narrow task: sensitive
+              data stays on your machine, cost per document falls, and the model can be
+              specialized
+    \end{itemize}
+\end{frame}
+
+% Elicit: Cambridge "Research Synthesis Methods" feasibility study on its data extraction.
+% SciSpace (formerly Typeset): 280M+ papers indexed.
+% AI Co-Scientist: Google DeepMind, Nature paper May 2026, wet-lab validated, not clinical.
+% MHS: Anthropic research preview, announced Thursday 27 Aug 2026. CMU integrated in 8 hours;
+% UW connected six instruments in under a week. Selected partners only.
+\begin{frame}{Built for Science}
+    \begin{itemize}\setlength{\itemsep}{7pt}
+        \item Elicit: works across the literature, searching, screening and extracting at
+              systematic-review scale
+        \item SciSpace: sits inside one paper with you. Chat with the PDF, get a figure or a
+              derivation explained, pull the numbers out
+        \item AI Co-Scientist: proposes hypotheses and designs the experiments to test them.
+              Published in \textit{Nature} in May, validated at the bench
+    \end{itemize}
+
+    \vspace{0.9em}
+    \begin{center}
+    Two sessions on this later in the semester: AI in Science, Workflows, and AI in Science,
+    Tools.
+    \end{center}
+
+    \vspace{0.7em}
+    {\small \textbf{Developing:} on 27 August Anthropic released the Model Hardware
+    Standard, which is MCP for physical instruments. Robotic arms, lab equipment,
+    manufacturing machines.}
+\end{frame}
+
+% Kimi K3: Moonshot AI, released 16 July 2026, weights 27 July. 2.8T parameters, the largest
+% open-weight model released to date. #1 on Frontend Code Arena (1,679); 3rd on GDPval-AA v2.
+% Open weights on permissive licences: DeepSeek, Qwen, GLM, MiniMax remain dramatically
+% cheaper. Airbnb was questioned by Congress in April 2026 over using Qwen; a self-hosted
+% open-weight model sends nothing to its author.
+\begin{frame}{Nobody Stays in Front}
+    \begin{itemize}\setlength{\itemsep}{7pt}
+        \item The lead changes every few months. Whoever tops the table today has usually
+              been passed by the next session of this workshop
+        \item In July, Moonshot AI released Kimi K3: 2.8 trillion parameters, the largest
+              openly released model to date. It placed first on one major coding leaderboard
+              and third on another
+        \item Chinese labs are now at the frontier, and the open-weight ones,
+              DeepSeek, Qwen and GLM among them, remain far cheaper than the American models
+        \item Open weights matter more than headline price: a model you run yourself costs
+              nothing per use, and sends nothing anywhere
+        \item So weigh the cost of switching against the gain from always being on the best
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Changing the Question}
+    \begin{itemize}\setlength{\itemsep}{8pt}
+        \item Everything so far has been about what these tools can do, and most of it comes
+              from the people who make them
+        \item Very little of it comes from a study designed to find out whether the tools
+              actually help
+        \item So the question changes: when somebody measures carefully, what do they find?
+        \item Three studies: a state labor department, a hospital, and a peer review process
+    \end{itemize}
+\end{frame}
+
+% Stanford RegLab with the Colorado Dept. of Labor and the US DOL, published January 2026.
+% Fine-tuned LLaMA-3 in a secure government sandbox. RCT: 8 adjudicators randomized at week
+% level, 788 drafts, blind QA against two control arms.
+% Time saved: 4 seconds, p = 0.8. Quality vs adjudicator alone: no difference, p = 0.37.
+\begin{frame}{What Happens When Somebody Measures}
+    \begin{itemize}\setlength{\itemsep}{6pt}
+        \item When you file for unemployment insurance, an adjudicator reviews your claim and
+              writes back asking for whatever is missing. It is slow, and it is repetitive
+        \item Colorado's labor department and Stanford fine-tuned a model on the department's
+              own records to draft those follow-up questions
+        \item They ran a randomized trial: 788 drafts, eight adjudicators, blind quality
+              review against two control groups
+        \item Time saved per case: four seconds. Statistically indistinguishable from zero
+        \item Quality, against the adjudicator working alone: no significant difference.
+              They published the result and did not deploy the system
+    \end{itemize}
+\end{frame}
+
+% NOHARM: arXiv 2512.01241, Goh et al., 46 co-authors, v4 13 Jul 2026. 1,100 consultation
+% cases, 10 specialties, 20 LLMs + 4 clinical AI tools, plus an RCT of 101 physicians.
+% Severe-harm potential in up to 24.6% of cases; >80% of severe errors were OMISSIONS.
+% UK Government "Consult": reviewers used "Other" 793 times against the model's 47, a 17x gap.
+\begin{frame}{The Failure You Cannot See}
+    \begin{itemize}\setlength{\itemsep}{7pt}
+        \item A model does not know what it does not know
+        \item In a 1,100-case medical safety study, over 80\% of severe errors were things
+              the model left out, not things it invented
+        \item A UK government review of public consultation responses found the same shape:
+              human reviewers used the ``Other'' category seventeen times more often than the
+              model did
+        \item It does not say that it is unsure. It files the case under the nearest heading
+              it already has, and nothing in the output shows that anything is missing
+    \end{itemize}
+\end{frame}
+
+% Harvard/Stanford, Science: 76 ER cases, o1-preview only, diagnostic accuracy.
+% NOHARM: 1,100 consultations, 10 specialties, 24 systems, safety.
+\begin{frame}{Accuracy Is Not Safety}
+    \begin{itemize}\setlength{\itemsep}{7pt}
+        \item Two studies of AI in clinical medicine, months apart, reached opposite
+              headlines. Both are correct
+        \item Harvard and Stanford: 76 emergency cases, one model. It matched or exceeded
+              expert physicians on diagnosis
+        \item NOHARM: 1,100 consultations, 24 systems. Potential for severe harm in up to a
+              quarter of cases
+        \item One measured whether it gets the answer right. The other measured what happens
+              when it does not
+        \item The average and the tail are different questions, and only one of them made the
+              headlines
+    \end{itemize}
+\end{frame}
+
+% ============================================================
+%  PART 3
+% ============================================================
+
+\begin{frame}[plain]
+    \vfill
+    \begin{center}
+        {\Huge Part 3}\\[0.8em]
+        {\Large How Your Role Changes}
+    \end{center}
+    \vfill
+\end{frame}
+
+\begin{frame}{Replacing Workers, or Replacing Work?}
+    \begin{itemize}\setlength{\itemsep}{8pt}
+        \item The question people ask is whether these tools replace people
+        \item A more immediate question is: which parts of a job they take over, and which
+              parts they leave alone
+        \item Every technology that automated a task changed what the job was long before it
+              changed how many jobs there were
+        \item So the question is not whether your field survives this, but which hours of
+              your week are the ones under discussion
+    \end{itemize}
+\end{frame}
+
+% Kasparov lost the Deep Blue rematch on 11 May 1997, 3.5 to 2.5.
+% PAL/CSS Freestyle tournament, 2005. Winners: Steven Cramton and Zackary Stephen ("ZackS").
+% Quote from "The Chess Master and the Computer", NYRB, 11 Feb 2010.
+\begin{frame}{The Centaur}
+    \begin{itemize}\setlength{\itemsep}{6pt}
+        \item In May 1997, Deep Blue beat Garry Kasparov. Chess was widely treated as settled
+        \item Kasparov's response was to invent a format where humans and machines play
+              together. Eight years later a tournament ran it open to anyone, with any machine
+        \item It was won by two American amateurs running three ordinary PCs
+        \item They were not better at chess. They were better at running the machines:
+              knowing which positions to push on, and when to disagree
+        \item Kasparov: \textit{``weak human + machine + better process was superior to a
+              strong computer alone''}, and also to a strong human with a worse process
+    \end{itemize}
+\end{frame}
+
+% VERIFIED 2 Sep 2026 by reading erdosproblems.com and Tao's wiki directly in the browser.
+% Site front page: 1,220 problems, 576 (47%) solved.
+% Pre-AI rate: Quanta, 111 problems moved open->solved between 2024 and Aug 2025
+%   = 20 months = ~5.5/month.
+% D-DAY: Erdos Problem 90 (unit distance), OpenAI internal model, 20 MAY 2026, full solution.
+%   Claude Mythos solved it independently on 26 May 2026. Both in wiki section 1(a).
+% THE 18: counted by hand from Tao's wiki section 1(a), "AI standalone" (human involvement
+% non-significant), taking only entries marked green/full solution and counting DISTINCT
+% problems. They are: 38, 90, 125, 205, 457, 619, 694, 741, 960, 987, 990, 1014, 1051,
+% 1091, 1141, 1196, 1202, 1217 = 18. ([90] appears twice: OpenAI 20 May and Claude Mythos
+% 26 May, solved independently. Counted once.)
+% THE 36: same method on section 1(d), "AI collaborating with humans", green only, distinct
+% problems. 33 of the 36 fall in 2026; the other three began in Oct-Dec 2025.
+% Both counts run to the wiki's cutoff: it stopped being updated on 30 June 2026.
+% !! TIMESPAN: the 18 run from 10 Jan to 9 Jun 2026, i.e. FIVE MONTHS, not six weeks.
+%    (13 of the 18 do fall between 1 Apr and 20 May, which is about seven weeks, if a
+%    tighter window is ever wanted. The slide deliberately makes no time claim.)
+% !! 16 OF THE 18 PREDATE D-DAY. Before 20 May: 205, 1051, 457, 125, 1202, 960, 987, 990,
+%    1091, 1141, 1196, 741, 1217, 1014, 38, 694. On or after: only 90 (20 May) and 619 (9 Jun).
+%    So do NOT say "after the unit distance proof, AI solved 18" -- it is the wrong way round.
+%    Problem 90 was the first AI proof of a MAJOR problem; 728 (6 Jan) was the first at all.
+% LIAM PRICE: Quanta, "Price studied some math in college but left before finishing" --
+%    no degree at all. Problem [205], one of the 18 AI-standalone solutions, was the one
+%    he elicited (GPT-5.2 Thinking, formalised by Aristotle) -- source: Kevin Barreto's
+%    own account on erdosproblems.com, blog:2, 26 Jan 2026.
+% Excluded throughout: partial progress, candidate, unverified and incorrect entries.
+% NOT from Quanta. The full Quanta text was read in the browser on 2 Sep 2026 and contains
+% no figure of 18: its only tallies are 111 (2024-Aug 2025), DeepMind's 4 solved + 9
+% rediscovered (Jan), 9 of 353 (May), Astra's 3 more (1 Aug), and 565 solved / 652 open.
+% !! CAVEAT to say out loud: the site's own note under OPEN->SOLVED says it is NOT a record
+%    of when solutions actually happened or how quickly problems are being solved.
+% Quanta, 3 Aug 2026.
+% 2026: DeepMind resolved 9 of 353 open problems autonomously (May); a DeepMind team solved
+% 4 and found prior solutions to 9 more (January, using Gemini); OpenAI's model settled the
+% unit distance conjecture (20 May); OpenAI's Astra made 10 advances including 3 more Erdos
+% problems (1 Aug). Barreto (Cambridge undergraduate) and Price (did not finish his degree),
+% both early 20s, co-authored a paper with Terence Tao and Jared Duker Lichtman resolving
+% Problem 1196. Their earlier Problem 333 turned out to have been solved before.
+\begin{frame}{The Same Pattern, in Mathematics}
+    \begin{itemize}\setlength{\itemsep}{6pt}
+        \item The Erd\H{o}s problems are a public list of open problems in mathematics,
+              kept on a website anyone can post to
+        \item Professors and hobbyists comment side by side. Terence Tao was among the
+              most active
+        \item Before AI, the problems closed at about five a month
+        \item 18 have now been fully solved by AI, and 36 more with AI assistance
+        \item That includes one by Liam Price, who does not have a degree
+        \item Knowing how to guide AI was enough
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{What That Makes Your Job}
+    \begin{itemize}\setlength{\itemsep}{7pt}
+        \item You are not being asked to write less. You are being asked to specify, review
+              and decide more
+        \item Describing a task precisely is now a core skill. ``Analyze this'' is not an
+              instruction
+        \item The tools that coordinate work matter more, not less: version control,
+              GitHub, Slack, Monday
+        \item You no longer have to memorize the syntax. You do have to be able to tell when
+              the answer is wrong
+        \item Hand over the work you are time-constrained on, not the work you are
+              cognitively constrained on
+        \vspace{2pt}
+        \begin{itemize}
+            \item Ask it to check the grammar across a long document. Do not ask it to write
+                  the page for you
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Food for Thought}
+    \begin{itemize}\setlength{\itemsep}{9pt}
+        \item How do I break my work into smaller steps, and what does ``correct'' mean for
+              each step?
+        \item Centaur chess is over: the engines got strong enough that the human stopped
+              adding anything. Which parts of your work are like chess?
+        \item What in your work is the thinking, and what is the drafting?
+        \item Is using this a way of standing out, or is it keeping up?
+        \item If a model wrote the first draft, whose work is it?
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Where to Go From Here}
+    \begin{itemize}\setlength{\itemsep}{8pt}
+        \item Slides and materials: \url{https://github.com/dlab-berkeley/AI_Pulse}
+        \item Workshop suggestions: \url{https://forms.gle/x8KfejgCViE7t6iQA}
+        \item What Berkeley already gives you:
+              \url{https://life.berkeley.edu/ai-tools-for-berkeley-students}
+        \item D-Lab: \url{https://dlab.berkeley.edu}
+    \end{itemize}
+
+    \vspace{1em}
+    \begin{center}
+    Next: The Major AI Ecosystems, 15 September.
+    Office hours next week, same day and time, on Zoom.
+    \end{center}
+\end{frame}
+
+\begin{frame}{References}
+    \scriptsize
+    \begin{itemize}\setlength{\itemsep}{2.5pt}
+        \item Gowers quote and the Erd\H{o}s unit distance proof: \textit{Quanta Magazine},
+              ``Why the Legendary Erd\H{o}s Problems Are Falling to AI'', 3 August 2026;
+              \textit{Nature}, 2026. Problem counts from Bloom's database, \url{erdosproblems.com}
+        \item Boris Cherny's workflow: his own thread, 2 January 2026, and Sequoia AI Ascent 2026.
+              The 80\% figure: Anthropic, code merged to production May 2026, via VentureBeat,
+              4 June 2026
+        \item Gemini's billion users: Google, 11 August 2026. Workplace use: Gallup, Q1 2026.
+              Student use: HEPI and Kortext, \textit{Student Generative AI Survey 2026},
+              1,054 UK undergraduates. Job ads: PwC \textit{Global AI Jobs Barometer 2026}
+        \item AI-written peer reviews at ICLR 2026: Pangram, 18 November 2025, over 70,000
+              reviews. Note that Pangram sells AI detection
+        \item Berkeley's tools and data protections: Berkeley IT and the EVCP office, 2025;
+              \url{life.berkeley.edu/ai-tools-for-berkeley-students}
+        \item Prices: \url{platform.claude.com/docs} and OpenAI's pricing page, both checked
+              September 2026. Leaderboard standings: LMArena, September 2026
+        \item Kimi K3: Moonshot AI, 16 July 2026. AI Co-Scientist: Google DeepMind,
+              \textit{Nature}, May 2026. Model Hardware Standard: Anthropic, 27 August 2026
+        \item The Colorado trial: Stanford RegLab with the Colorado Department of Labor and
+              Employment, January 2026. Medical safety: Goh et al., ``First, do NOHARM'',
+              arXiv:2512.01241. Diagnosis: Harvard and Stanford, \textit{Science}
+        \item Kasparov: ``The Chess Master and the Computer'', \textit{The New York Review of
+              Books}, 11 February 2010
+    \end{itemize}
+\end{frame}
+
+\end{document}
