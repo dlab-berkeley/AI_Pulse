@@ -5,13 +5,7 @@ session rather than a hands-on one. 1 September 2026.
 
 ## The session
 
-A map of where AI actually stands, for people being brought into it rather than people
-already working in it. No prior experience assumed, and nothing in the session requires a
-paid account.
-
-It opens with what changed and what now exists, moves to what agents do and whether any of
-it holds up when somebody measures, and closes on what all of this asks of the person doing
-the work.
+In this workshop we will discuss how AI arrived at where it stands today, and where it has been used effectively, and where it hasn't. We start with the many ways of interacting with AI, from chats to agentic workflows, then turn to practical concerns such as which model tier is appropriate for each task. Participants should leave with a map of the current tools, applications and buzzwords, and a sense of where to start.
 
 ## Structure
 
@@ -42,16 +36,3 @@ counter in the footer is correct.
 
 The source carries a status legend above `\begin{document}`, and a source comment on every
 factual claim recording where it came from, when it was verified, and what undercuts it.
-
-## Status
-
-Complete, 31 slides.
-
-**Perishable content.** Anything about model versions, prices, leaderboards or vendor
-offerings dates fast. Re-check before re-delivering: the tool catalogue, the subscription
-prices, the per-token price table, and the LMArena standings. Each is flagged in the source.
-
-**Image provenance.** `slides/drafting_room.jpg` has no established source, photographer or
-licence, so it is excluded from this repository and the `\includegraphics` call is guarded
-with `\IfFileExists`. The source therefore compiles without it, showing a placeholder note
-in its place. Note that the compiled PDF here still embeds the photograph.
