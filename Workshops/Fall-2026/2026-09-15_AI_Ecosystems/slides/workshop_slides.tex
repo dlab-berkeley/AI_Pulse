@@ -1,0 +1,882 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{graphicx}
+
+% Global bullet spacing
+\newlength{\myitemsep}
+\setlength{\myitemsep}{1em}
+\let\olditemize\itemize
+\renewcommand{\itemize}{\olditemize\setlength{\itemsep}{\myitemsep}}
+\let\oldenumerate\enumerate
+\renewcommand{\enumerate}{\oldenumerate\setlength{\itemsep}{\myitemsep}}
+
+% ============================================================
+%  HOUSE STYLE: see AI-Pulse/SLIDE_STYLE.md
+%    No em-dashes (use colons). No boldface. No closing punchlines.
+%    4-5 bullets a slide, one line each where possible. American spelling.
+%    Citations on the References slide; source comments on every claim.
+%
+%  SLIDE STATUS LEGEND
+%    (untagged)  settled, reviewed with Bruno
+%    % [NEW]     built, not yet walked through
+%    % [STAGE]   a stage of the running demo
+%    % TODO:     not built yet
+%
+%  RUNNING DEMO: "How do I keep up with AI?" threaded through the session.
+%    Shared capabilities are demoed once. Divergent ones are demoed twice.
+%    Opening joke, slide 4: "A lot of people are worried about losing their jobs.
+%    Today I will show you how to replace me entirely." Closed on slide 44.
+% ============================================================
+
+\title{The Major AI Ecosystems}
+\subtitle{D-Lab AI Pulse, Fall 2026: Session 2}
+\author[D-Lab]{Materials: \url{https://github.com/dlab-berkeley/AI_Pulse}\\Workshop suggestions: \url{https://forms.gle/x8KfejgCViE7t6iQA}}
+\date{15 September 2026}
+
+\begin{document}
+
+% [NEW]
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% [NEW]
+\begin{frame}{Where Session 1 Left Off}
+    \begin{itemize}
+        \item AI has developed well past the chat box: agents, projects, and connectors
+        \item Getting the most out of any of it takes an application, and a subscription
+        \item Which raises three questions:
+            \vspace{1em}
+            \begin{itemize}\setlength{\itemsep}{4pt}
+                \item What is the difference between the environments
+                \item What is the difference between the plans
+                \item Is it worth paying more, given what I actually do
+            \end{itemize}
+        \item Today is about answering all three
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+% [NEW]
+% OPENING JOKE goes here, delivered not printed:
+%   "A lot of people are worried about losing their jobs.
+%    Today I will show you how to replace me entirely."
+% The running task is genuinely the job this workshop does for the room every two weeks,
+% which is what makes the joke work. Loop closed on the "Did It Replace Me?" slide.
+% The running task is now the last bullet rather than the title, 14 Sept.
+\begin{frame}{Today's Roadmap}
+    \begin{itemize}\setlength{\itemsep}{7pt}
+        \item We look at the two main environments: OpenAI and Anthropic
+        \item Part 1, the basics, what each company sells and what it costs
+        \item Part 2, what they have in common, which is most of it
+        \item Part 3, where they differ in practice, run side by side
+        \item Part 4, what you are agreeing to, and what happens when it changes
+        \item Throughout, one task carried end to end: how do I keep up with AI
+    \end{itemize}
+\end{frame}
+
+
+% ============================================================
+%  PART 1
+% ============================================================
+
+% [NEW]
+\begin{frame}[plain]
+    \vfill
+    \begin{center}
+        {\Huge Part 1}\\[0.8em]
+        {\Large The Basics}
+    \end{center}
+    \vfill
+\end{frame}
+
+% [NEW]
+% Bruno's prepared answer, agreed 1 Sept 2026. See google_question.md.
+% Do NOT say "Google has fallen behind": Session 1 slide 13 has Gemini 3.7 Flash ninth on
+% LMArena and slide 8 leads with Gemini's billion users. The deck would contradict itself.
+% [NEW]
+% Rewritten 7 Sept on Bruno's note. The old version argued from Berkeley's Gemini
+% licence alone. This argues from what makes an environment worth committing to.
+% Alternatives named: xAI's Grok, Moonshot's Kimi, Meta, Mistral, DeepSeek, Z.ai.
+% !! Kimi K3 is open weights, so "general use" is doing different work there: you can
+%    run it yourself, but there is no consumer subscription of the kind this session is
+%    comparing. Say that if anyone asks.
+\begin{frame}{Why These Two}
+    \begin{itemize}
+        \item Berkeley gives you Gemini and Gemini Notebook already, so that decision is
+              made for you
+        \item They are close to the frontier at all points
+        \item Both build for general use, not for one narrow job, so what you learn
+              transfers
+        \item Both have a large community, which is where the workflows actually come from
+        \item And both are established enough to be, somewhat, trustworthy with your work
+        \item There are others for general use: Grok, Kimi, Mistral, DeepSeek
+    \end{itemize}
+\end{frame}
+
+
+% [NEW]
+% UPDATED 6 Sept 2026: Fable 5.1 and Mythos 5.1 shipped 1 Sept 2026. Fable 5.1 is generally
+%   available at $10/$50 with cache reads cut 75% to $0.25. Mythos 5.1 is US organizations
+%   only, via the verification programs. GPT-6 Astra launched 3 Sept but is a STAGED release
+%   (alpha testers, then Daybreak Blue), so it is not something this room can buy: leave it
+%   off the slide. See Ideas/Fall-2026/02_AI_Ecosystems/mythos_lsvp.md.
+% TABLE REBUILT 14 Sept. !! CHECK EVERY NAME AND ROW BEFORE DELIVERY.
+% Anthropic: Fable 5.1 and Mythos 5.1 (1 Sept 2026, $10/$50, cache reads $0.25).
+%   Mythos 5.1 is US organizations only, via the Cyber and Life Sciences Verification
+%   Programs. Opus 5 (24 Jul, $5/$25). Sonnet 5 (30 Jun, $2/$10 rising to $3/$15 on
+%   1 Sept 2026). Haiku 4.5 (1 Oct 2025, 200k, $1/$5). No Haiku 5 exists.
+% OpenAI: GPT-6 Astra shipped 3 Sept 2026 and rolled out 3-5 Sept to Pro, Enterprise and
+%   Business Premium, then Plus and Business, plus the API and AWS. So it IS buyable now.
+%   GPT-5.6 Sol / Terra / Luna, all 9 Jul 2026, 1.05M context.
+% The o-series is gone (o4-mini, GPT-4o, 4.1, 5, 5.1, 5.2, 4.5 retired Feb-Jun 2026; o3
+%   retired 26 Aug) but the slide no longer says so: the table carries the point.
+% !! The tier labels (Frontier / Default / Balanced / Cheap) are OUR framing, inferred
+%    from price. Neither vendor publishes them. Check they are defensible or relabel.
+\begin{frame}{Two Model Lineups}
+    \begin{itemize}
+        \item Anthropic keeps parallel tiers. OpenAI ships variants of one model
+    \end{itemize}
+
+    \vspace{0.8em}
+    \begin{center}
+    \small
+    \begin{tabular}{lll}
+        \toprule
+        & Anthropic & OpenAI \\
+        \midrule
+        Frontier      & Fable 5.1   & GPT-6 Astra \\
+        Default       & Opus 5      & GPT-5.6 Sol \\
+        Balanced      & Sonnet 5    & GPT-5.6 Terra \\
+        Cheap         & Haiku 4.5   & GPT-5.6 Luna \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+
+    \vspace{0.8em}
+    \begin{itemize}
+        \item How hard the model thinks is now a slider, not a separate family of models
+    \end{itemize}
+\end{frame}
+
+
+
+% [NEW] 14 Sept, on Bruno's note: the price table says what it costs, not what you get.
+% Sources: Ideas/Fall-2026/02_AI_Ecosystems/ecosystems_reference.md sections 3 and 4.
+% Anthropic Free is chat only: NO Claude Code, NO Cowork. Projects: Free 5, paid unlimited,
+%   RAG mode on paid expands effective capacity ~10x.
+% OpenAI Free has Codex and ChatGPT Work on desktop. Projects unlimited on all plans; files
+%   capped Free 5 / Go-Plus 25 / Pro-Business-Edu 40.
+% Skills: Anthropic on EVERY plan including Free, open SKILL.md standard. OpenAI Skills are
+%   Business and Enterprise only; Custom GPTs need a paid plan.
+% Scheduled jobs: Anthropic Routines, research preview, per-account daily cap, no count
+%   limit published. OpenAI Tasks hard count limits: Go 3 / Plus 5 / Business 10 / Pro 15.
+% !! CONTESTED, reference doc 12.2: "ChatGPT Work on Free" and "unlimited Luna text on
+%    Free". The OpenAI Free cell depends on the first. Verify in a logged-out browser
+%    before delivery, or soften that cell.
+% Team rows dropped 14 Sept: both are $25/seat and the row added little.
+% !! The 5x and 20x figures are the vendors' own advertised multipliers. BOTH ARE
+%    CONTESTED: see the very next slide, and Ideas/.../plan_limits_dispute.md. This table
+%    states what is advertised; the next slide says what it means.
+\begin{frame}{What You Get, Not What You Pay}
+    \begin{center}
+    \small
+    \begin{tabular}{p{1.5cm}>{\raggedright\arraybackslash}p{5.4cm}>{\raggedright\arraybackslash}p{5.0cm}}
+        \toprule
+        & Anthropic & OpenAI \\
+        \midrule
+        Free    & Chat, skills, 5 projects              & Chat, Codex, Work, projects \\
+        \$8     & none                                  & + more files, 3 scheduled jobs \\
+        \$20    & + Claude Code, Cowork, projects  & + 5 scheduled jobs \\
+        \$100   & + five times the \$20 limits          & + five times, 15 scheduled jobs \\
+        \$200   & + twenty times the \$20 limits        & + twenty times \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+
+    \vspace{0.8em}
+    \begin{itemize}
+        \item OpenAI has one rung Anthropic does not: an \$8 tier, which may carry ads
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+% Anthropic: rolling 5-hour session + weekly caps (one all-model, one Sonnet-only).
+%   Usage across claude.ai, Claude Code and Desktop draws from ONE SHARED POOL.
+% OpenAI: four vocabularies at once: unlimited-per-model; credits per message (Sol 10,
+%   Sol Pro 50, deep research 50/task, image 5, voice 5/min); credits per million tokens;
+%   rolling windows (Codex Plus 10-100 local messages per 5 hours).
+% !! DO NOT quote Anthropic per-plan message counts. They are no longer published and the
+%    surviving support article references Sonnet 4 and Opus 4. It is stale.
+% ADDED 14 Sept: the Fable ceiling and the buy-more line.
+% Max 5x and 20x: Fable is included only within up to 50% of the regular weekly limit.
+%   It is a ceiling INSIDE the same allowance, not extra capacity. Past it you can keep
+%   using other models, or buy credits to continue on Fable.
+% Pro $20: Fable draws pay-as-you-go credits FROM THE FIRST REQUEST, so it is not
+%   included at all.
+% Two independent clocks: a rolling 5-hour session and a weekly allowance that resets at
+%   an account-specific time, visible in Settings > Usage. Waiting out one does not reset
+%   the other.
+% !! SECONDARY SOURCES (aifreeapi, tokenkarma, techbytes), read 14 Sept. Corroborated
+%    across several, not confirmed on Anthropic's own page. Check before stating flatly.
+\begin{frame}{Two Different Vocabularies for Usage}
+    \begin{itemize}\setlength{\itemsep}{7pt}
+        \item Anthropic uses one vocabulary: a rolling five-hour session, plus weekly caps
+        \begin{itemize}
+            \item Chat, Claude Code and the desktop app all draw from the same pool
+        \end{itemize}
+        \item OpenAI uses four at once: unlimited per model, credits per message, credits
+              per million tokens, and rolling windows
+        \begin{itemize}
+            \item A single deep research run costs 50 credits; an image costs 5
+        \end{itemize}
+        \item On the top Anthropic model, half your weekly allowance is the ceiling
+        \begin{itemize}
+            \item On the \$20 plan it is not included at all: it bills as you go
+        \end{itemize}
+        \item This is the most confusing part of either product, and the hardest to compare
+        \item When you run out you can buy more, by credits or through the API
+    \end{itemize}
+\end{frame}
+
+% ============================================================
+%  PART 2
+% ============================================================
+
+% [NEW]
+
+% [NEW] 14 Sept, replacing the multiplier and vetted-tier slides.
+% Sources: Ideas/Fall-2026/02_AI_Ecosystems/ecosystems_reference.md section 6, and
+% mythos_lsvp.md.
+% OpenAI, ChatGPT for Academic Researchers, launched 29 July 2026: 12 months free, $0 at
+%   checkout, no auto-renew. Pro-level limits including Sol Pro, expanded deep research,
+%   75+ life-science skills. FIVE seats, 1 owner + 4 verified collaborators at the same
+%   institution. Eligibility: research faculty OR postdoc at a high-research-activity
+%   degree-granting institution, PLUS a paper on arXiv, bioRxiv or ChemRxiv within 3 years.
+%   SheerID on institutional email, 1-2 weeks. Excludes API credits, SSO, SCIM.
+% OpenAI Researcher Access Program: up to $1,000 API credits, reviewed quarterly
+%   (Mar/Jun/Sep/Dec), credits expire in 12 months. NEXT REVIEW IS THIS MONTH.
+% Anthropic Team Plan for Scientists: standard seats FREE for 12 months (normally $20),
+%   premium seats $15 (normally $100). 1-25 seats. PI-led. Fields: "natural sciences,
+%   mathematics, computer science, engineering, and related fields" - "related fields" is
+%   UNDEFINED. Capped at 10,000 scientists worldwide. 90 days inactivity reverts pricing.
+%   Renews at the then-current price after 12 months. 5-7 business days.
+% Anthropic AI for Science: up to $50,000 in credits per project, 6-month term, reviewed
+%   the first Monday of every month. API ONLY, not the claude.ai app.
+% Anthropic Life Sciences Verification Program: access to the restricted Mythos model for
+%   vetted life scientists, US organizations only, first participants enrolled.
+% !! NO VERIFIED STUDENT ROUTE. Bruno asked for one; the only sources found were affiliate
+%    and SEO sites, not vendor pages. Neither program above admits students directly:
+%    OpenAI needs faculty or postdoc status plus a preprint, Anthropic is PI-led and
+%    students receive seats through a supervisor's group. If a real student offer exists,
+%    verify it on the vendor's own page before adding it.
+\begin{frame}{What You Might Not Have to Pay For}
+    \begin{center}
+    \scriptsize
+    \begin{tabular}{p{3.5cm}>{\raggedright\arraybackslash}p{4.2cm}>{\raggedright\arraybackslash}p{4.3cm}}
+        \toprule
+        Program & Who & What you get \\
+        \midrule
+        OpenAI, Academic Researchers & Faculty or postdoc, with a preprint in the last three years & Twelve months free at the top limits, five seats \\
+        OpenAI, Researcher Access    & Any researcher, reviewed quarterly & Up to \$1,000 in API credits \\
+        Anthropic, Team Plan for Scientists & Principal investigators in science and related fields & Free seats for twelve months, \$15 for the larger ones \\
+        Anthropic, AI for Science    & Academic and nonprofit projects & Up to \$50,000 in credits per project \\
+        Anthropic, Life Sciences     & Vetted life scientists, US institutions & The restricted model, and looser safeguards \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+
+    \vspace{0.8em}
+    \begin{itemize}
+        \item None of these is a student route: you get in through a supervisor's group
+        \item Both verify against your institutional email, and both take a week or two
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+    \vfill
+    \begin{center}
+        {\Huge Part 2}\\[0.8em]
+        {\Large What They Share}
+    \end{center}
+    \vfill
+\end{frame}
+
+% [NEW]
+% Parity list from reference section 4. Do not oversell any of these as a differentiator.
+\begin{frame}{Both of Them Already Do All of This}
+    None of it is a reason to pick one over the other.
+
+    \vspace{0.8em}
+    \begin{itemize}\setlength{\itemsep}{5pt}
+        \item Projects, memory, deep research, and code execution inside chat
+        \item Connectors to your other tools, and MCP support on both sides
+        \item Computer use, scheduled tasks, and a million tokens of context
+        \item Batch and caching discounts, Office integrations, and a unified desktop app
+    \end{itemize}
+
+    \vspace{1em}
+    So I will show each of these once, and it will look the same wherever you do it.
+\end{frame}
+
+% [STAGE 1]
+\begin{frame}{Asking a Question}
+    \begin{itemize}
+        \item Both will search the web and come back with something about as good as the other
+        \item They cite what they used, and you can click through to the source
+        \item You can ask follow-ups against what it found, rather than starting again
+        \item Everyone already does this, and it is where the two are hardest to tell apart
+    \end{itemize}
+\end{frame}
+
+% [STAGE 2]
+\begin{frame}{Keeping Sources in One Place}
+    \begin{itemize}
+        \item A Project is a folder with a memory: files, instructions, and its own history
+        \item Papers, links and notes go in once, and every later conversation can see them
+        \item Standing instructions live there too, so you stop retyping what you care about
+        \item If you take one thing away today it is this, and both of them have it
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+% Anthropic: Free 5 projects, paid unlimited. Per-project memory space.
+% CAPACITY, added 15 Sept from support.claude.com/en/articles/11473015:
+%   RAG is on PAID PLANS ONLY (Pro, Max, Team, Enterprise). It activates automatically
+%   "when your project approaches or exceeds the context window limits", with no setup and
+%   no user action. Anthropic's claim: "Store up to 10x more content in your projects", and
+%   "Response accuracy remains consistent with in-context processing".
+%   !! The exact threshold is NOT published; it is tied to the context window for the plan.
+%   !! A known bug report (claude-code issue #25759) says files switch to RAG search at 2%
+%      capacity because the threshold counts FILES not tokens. Do not quote the 2%: it is a
+%      bug report, not documented behavior. Mentioned only so it is not a surprise.
+%   !! FREE PLAN GETS NO RAG. A free project simply hits the ceiling.
+% OpenAI: unlimited projects on all plans. File caps: Free 5 / Go-Plus 25 / Pro-Business-Edu
+%   40. Memory scope is selectable: project-only or default.
+%   !! No OpenAI equivalent of the RAG-switch behavior was found. Do not claim symmetry.
+\begin{frame}{Projects: The One Real Difference}
+    \begin{itemize}
+        \item Anthropic caps the number of projects on Free and removes the cap when you pay
+        \item OpenAI gives unlimited projects on every plan, and caps the files inside each
+        \item Either way a project fills up. Anthropic's then starts searching your files
+              instead of reading them all, which holds about ten times as much
+        \item So a project is not a bottomless folder. Past a point it retrieves rather
+              than reads, and you will not be told when that happened
+        \item OpenAI lets you choose whether a project can see your general memory, or only
+              its own, which matters if unpublished work lives in one and not another
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+% Batch 50% both. Cache read 90% both. Fast mode 2x price, ~2.5x faster, both.
+% Data residency +10% both. Anthropic stacked best case 0.05x base input.
+% Cache write differs and is contested: Anthropic 1.25x (5 min) / 2x (1 hr); OpenAI
+% reported free, but one source says 1.25x on the GPT-5.6 table. Do not assert.
+
+% [NEW]
+% Source: Ideas/Fall-2026/02_AI_Ecosystems/memory.md. Anthropic, 25 Aug 2026.
+% Topics added as you chat, not summarized after a conversation ends. Spans Claude chat
+%   (web, desktop, mobile) and Cowork, syncing both ways. Stored as editable topic files.
+% Settings > Memory: pause, reset, edit or delete individual files, toggle sensitive topics.
+% On by default Free/Pro/Max. OFF on Team and Enterprise until an admin enables it.
+% Excluded by default, opt-in to include: health, race, ethnicity, religious beliefs,
+%   politics, gender identity. Refused outright: government and other sensitive ID numbers,
+%   criminal history, immigration status, anything violating the Acceptable Use Policy.
+% !! Check OpenAI's current memory scope before implying a difference. Both have memory;
+%    the cross-product sync and the editable-file model are the candidate distinctions.
+\begin{frame}{What It Remembers About You}
+    \begin{itemize}\setlength{\itemsep}{6pt}
+        \item Both keep a memory across conversations, not only inside one
+        \item Anthropic now writes topics down as you talk rather than summarizing
+              afterward, and shows them to you as files you can edit or delete
+        \item It spans the chat and the agent, so something you said in one turns up in
+              the other
+        \item Health, race, religion, politics and gender identity are left out unless you
+              opt in
+        \item On by default for individuals, and off until an administrator turns it on for
+              a team
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+% Anthropic Desktop: Chat / Cowork / Code tabs.
+% OpenAI merged the standalone Codex app into the ChatGPT desktop app on 9 July 2026,
+% with a Chat / Work / Codex switcher. Six weeks apart. Convergent evolution.
+\begin{frame}{Convergent Evolution}
+    \begin{itemize}
+        \item Both companies built a chat app, a coding agent, and an agent for everything
+              that is not code
+        \item Both then merged all three into a single desktop application
+        \item Anthropic's has Chat, Cowork and Code tabs. OpenAI's has Chat, Work and Codex
+        \item They shipped six weeks apart, without copying each other's design
+    \end{itemize}
+\end{frame}
+
+% ============================================================
+%  PART 3
+% ============================================================
+
+% [NEW]
+\begin{frame}[plain]
+    \vfill
+    \begin{center}
+        {\Huge Part 3}\\[0.8em]
+        {\Large Where They Differ in Practice}
+    \end{center}
+    \vfill
+\end{frame}
+
+% [NEW]
+% Anthropic Artifacts: interactive React, publishable, 20MB persisted storage.
+%   AI-powered artifacts bill to the VIEWER's subscription, not the author's.
+% OpenAI Canvas: narrowed to writing and code blocks on 28 May 2026.
+\begin{frame}{Artifacts against Canvas}
+    \begin{itemize}
+        \item Both let the model produce a document you can edit beside the conversation
+        \item OpenAI narrowed Canvas to writing and code in May
+        \item Anthropic's Artifacts stayed broad: working pages you can publish and share
+        \item An artifact that calls the model bills the person viewing it, not the person
+              who wrote it
+    \end{itemize}
+\end{frame}
+
+% [STAGE 3]
+% [NEW]
+% Source: Ideas/Fall-2026/02_AI_Ecosystems/claude_design.md. Beta as of 6 Aug 2026.
+% Chat on the left, canvas on the right. Pro, Max, Team, Enterprise. DISABLED BY DEFAULT
+%   on Enterprise. Web and desktop only, no mobile.
+% Imports design files, codebases, screenshots. Exports zip, PDF, PPTX, standalone HTML,
+%   handoff to Claude Code, plus Adobe, Canva, Gamma, Miro, Replit, Vercel, Wix.
+% Draws on the shared usage pool. Known issues: inline comments sometimes do not display,
+%   large repos degrade performance, simultaneous multi-person editing is unreliable.
+% !! Beta. Check what a Berkeley account actually has before demonstrating this live.
+\begin{frame}{A Canvas, Not a Conversation}
+    \begin{itemize}\setlength{\itemsep}{6pt}
+        \item Anthropic has a separate surface for designing things: chat on one side, a
+              canvas on the other
+        \item You describe what you want, then refine it by editing the canvas directly
+        \item It exports to PowerPoint and PDF, which is the part that matters for this room
+        \item It is still in beta, and it is switched off by default on institutional
+              accounts
+        \item Editing at the same time as somebody else does not reliably work yet
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Turning Sources Into Something Readable}
+    \begin{itemize}
+        \item From a folder of papers, it can write a summary of what changed and why
+        \item You can set the shape: length, audience, what to leave out
+        \item The same prompt in the two environments gives noticeably different writing
+        \item This is the first point where which one you use changes what you get
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+% Anthropic: docx, xlsx, pptx and pdf on ALL plans including Free. 30MB per file.
+% OpenAI: Docs/Sheets/Slides native and an Excel add-in, but PowerPoint is ABSENT from the
+%   Work desktop flow and PDF is undocumented.
+\begin{frame}{Making a File}
+    \begin{itemize}
+        \item Anthropic writes Word, Excel, PowerPoint and PDF files on every plan,
+              including the free one
+        \item OpenAI writes to Google Docs and Sheets, and has an Excel add-in
+        \item PowerPoint is missing from OpenAI's desktop flow, and PDF output is
+              undocumented
+        \item If you send colleagues attachments, this matters more than it sounds like it
+              should
+    \end{itemize}
+\end{frame}
+
+% [STAGE 4]  <- cut first if time is short
+\begin{frame}{Producing a File Someone Else Can Open}
+    \begin{itemize}
+        \item It can turn what you have into a document, a slide deck or a spreadsheet
+        \item One of them makes the file for you, the other sends you to Google
+        \item Where the file lands, and who can open it, differs between them
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+% Claude Code: terminal, VS Code, JetBrains, desktop, web, mobile.
+% Codex: web, CLI, IDE, desktop, mobile. Codex is on OpenAI's FREE tier.
+\begin{frame}{Two Coding Agents}
+    \begin{itemize}
+        \item Claude Code and Codex do the same job: they read your files, write, run and
+              fix code
+        \item Both run in a terminal, in your editor, on the web, and on a phone
+        \item Codex is on OpenAI's free tier. Claude Code needs a paid plan
+        \item You do not have to write code to use either. Most research use is data
+              wrangling and file handling
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+% Cowork: desktop GA, web/mobile beta. ChatGPT Work: GA, and on the free tier.
+\begin{frame}{Two Agents for Everything That Is Not Code}
+    \begin{itemize}
+        \item Cowork and ChatGPT Work are the same idea aimed at documents rather than
+              repositories
+        \item You describe a job, it works through your files, and you review what came back
+        \item ChatGPT Work is generally available and on the free tier
+        \item Cowork is generally available on desktop and still in beta on web and mobile
+    \end{itemize}
+\end{frame}
+
+% [STAGE 5]
+\begin{frame}{Sending It Off to Work Alone}
+    \begin{itemize}
+        \item You can give it a job that takes minutes rather than seconds, and walk away
+        \item It decides what to open, what to skip, and when it has enough
+        \item It reports back with what it found and where it came from
+        \item This is where the two pull apart most
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+% Both support MCP. Anthropic authored it; ~100M monthly downloads; competitors adopted it
+% rather than fielding a rival.
+\begin{frame}{Connecting Your Own Tools}
+    \begin{itemize}
+        \item Both can reach your mail, calendar, drive and notes through connectors
+        \item Both use MCP, the same open standard, which Anthropic wrote and OpenAI adopted
+        \item That is unusual. Competitors normally ship a rival rather than adopt yours
+        \item Enabling any connector widens what the model can see considerably
+    \end{itemize}
+\end{frame}
+
+% [STAGE 6]
+% Gmail connector is SCOPED BY LABEL, not by prompt. See session_plan.md.
+% Say the enforcement line out loud when doing this: it is the best teaching beat in Part 3.
+\begin{frame}{Letting It Read Your Own Material}
+    \begin{itemize}
+        \item Connectors let it read your mail, calendar, drive and notes
+        \item You choose the scope before it runs: one label, one folder, one calendar
+        \item Newsletters are the case where this genuinely saves an hour a week
+        \item It searches rather than reads everything, so ask what it searched
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+% Anthropic Routines: cron (minimum 1 hour) + authenticated HTTP POST + filtered GitHub
+%   webhooks. Research preview. Per-account daily cap.
+% OpenAI Tasks: one-off, recurring, and monitoring. HARD COUNT LIMITS: Go 3, Plus 5,
+%   Business 10, Pro and Enterprise 15. Max once per hour. Not available in voice, in GPTs,
+%   or on Pro models.
+\begin{frame}{Work That Runs Without You}
+    \begin{itemize}
+        \item Both can run a job on a schedule, at most once an hour
+        \item OpenAI caps how many you can have: three on Go, five on Plus, fifteen on Pro
+        \item Anthropic does not cap the count, and can also trigger on a web request or a
+              GitHub event
+        \item So one is a scheduler and the other is closer to a small automation system
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+% Source: Ideas/Fall-2026/02_AI_Ecosystems/loops.md. Anthropic, "Getting started with loops",
+%   30 June 2026.
+% Four kinds: turn-based; goal-based (/goal, stops when the goal is met or max turns);
+%   time-based (/loop runs locally, /schedule runs in the cloud); proactive (event or
+%   schedule, nobody present).
+% Examples given: "/goal get the homepage Lighthouse score to 90 or above, stop after 5
+%   tries" and "/loop 5m check my PR, address review comments, and fix failing CI".
+% Their line: with a goal loop "Claude doesn't have to make a determination on what is good
+%   enough". Guidance: match the interval to how often the thing actually changes.
+% Warnings: dynamic workflows can spawn hundreds of agents; a loop that writes code needs a
+%   review loop; "a reviewer with fresh context is less biased".
+% !! Claude Code only. Neither /goal nor /loop exists in the browser chat. Check OpenAI's
+%    equivalent before the parity framing covers scheduled work.
+\begin{frame}{Two Kinds of Repeating Job}
+    \begin{itemize}\setlength{\itemsep}{6pt}
+        \item One kind repeats on a clock: check this every Monday, or every five minutes
+        \item The other repeats until a condition is true, with a limit on how many attempts
+              it gets
+        \item The second is the useful one, because you supply the test instead of the model
+              judging its own work
+        \item Anthropic's phrasing: this way it does not have to decide what is good enough
+        \item Match the interval to how often the thing actually changes, or you pay thirty
+              times over for the same answer
+    \end{itemize}
+\end{frame}
+
+% [STAGE 7]  <- cut first if time is short
+\begin{frame}{Having It Run Without You}
+    \begin{itemize}
+        \item A job that works once can be set to repeat on a schedule
+        \item It runs whether or not you are at the machine, and leaves the result waiting
+        \item Look at my calendar for tomorrow and tell me what I need to prepare
+        \item Check my inbox for anything that actually needs answering today
+        \item Watch arXiv for new papers in my area and summarize what is worth reading
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+% Anthropic Skills: open SKILL.md standard (agentskills.io), on EVERY plan including Free,
+%   zip-and-upload for non-coders. Plugins + marketplace.json on GitHub/GitLab.
+% OpenAI Skills: Business and Enterprise ONLY. Custom GPTs need a paid plan; maintained but
+%   strategically stagnant. GPT Store has 1,400+ plugins.
+% !! ADDED 15 Sept at Bruno's request: "record a skill". NOT VERIFIED against Anthropic's
+%    own documentation. Confirm the feature name and that it is available on the plan you
+%    are demoing before saying it out loud.
+\begin{frame}{Packaging a Repeatable Job}
+    \begin{itemize}
+        \item Once a job works, both let you save it so it repeats without rebuilding
+        \item Anthropic calls these Skills: a folder with instructions, zipped and uploaded
+        \item You can also record one: do the job once while it watches, and it writes the
+              skill for you
+        \item No code required, and it is an open standard other tools can read
+        \item OpenAI's equivalent is Custom GPTs, and its own Skills feature is elsewhere
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+% [NEW]
+% Source: Ideas/Fall-2026/02_AI_Ecosystems/output_styles.md, code.claude.com/docs/en/
+%   output-styles, plus the comparison table on that page.
+% Output styles modify the system prompt (role, tone, format, every turn). CLAUDE.md adds a
+%   user message after the system prompt (project conventions, always loaded). Skills load
+%   task-specific instructions only when invoked or relevant. --append-system-prompt is a
+%   one-off addition. Agents run a subagent with its own system prompt.
+% keep-coding-instructions decides whether the built-in software engineering instructions
+%   survive; false is right for a writing assistant or data analyst.
+% The table below is the CHAT equivalent, which is what this room actually has. Do not
+%   present the Claude Code commands.
+\begin{frame}{Where an Instruction Should Live}
+    \begin{center}
+    \small
+    \begin{tabular}{lll}
+        \toprule
+        Put it in & Loaded & Use it for \\
+        \midrule
+        The prompt           & This turn only        & A one-off request \\
+        Custom instructions  & Every turn, always    & Tone and format you always want \\
+        Project instructions & Inside that project   & Conventions for one body of work \\
+        A saved skill        & When it is relevant   & A procedure you repeat \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+
+    \vspace{1em}
+    \begin{itemize}
+        \item The common mistake is keeping everything in the prompt and retyping it forever
+        \item The other one is putting everything in the always-loaded layer, which you pay
+              for on every single turn
+    \end{itemize}
+\end{frame}
+
+% This is the asymmetry made concrete: the running demo cannot be finished on both sides.
+\begin{frame}{The Asymmetry at the End of the Demo}
+    \begin{itemize}
+        \item Skills are on every Anthropic plan, including the free one
+        \item On OpenAI they are Business and Enterprise only
+        \item So the last stage of today's task can be packaged on one side and not the other
+        \item And not because of price: there is no personal plan that unlocks it
+    \end{itemize}
+\end{frame}
+
+% ============================================================
+%  PART 4
+% ============================================================
+
+% [NEW]
+\begin{frame}[plain]
+    \vfill
+    \begin{center}
+        {\Huge Part 4}\\[0.8em]
+        {\Large What It Means for You}
+    \end{center}
+    \vfill
+\end{frame}
+
+% [NEW]
+% Consumer plans: Anthropic OPT-IN (users chose during the Aug-Oct 2025 rollout).
+%   OpenAI OPT-OUT, ON BY DEFAULT. Retention if you accept training: up to 5 years.
+% Team/Business, Enterprise/Edu and API: not trained on by default, both sides.
+% Private mode: Anthropic Incognito (never trained on regardless of settings);
+%   OpenAI Temporary Chats (30-day delete, never trained on).
+\begin{frame}{Your Data}
+    \begin{itemize}\setlength{\itemsep}{7pt}
+        \item On a personal paid or free account, Anthropic asks first. Training is off
+              unless you turned it on
+        \item OpenAI's is on by default. You have to go and turn it off
+        \item If you leave it on, your conversations can be retained for up to five years
+        \item On Team, Enterprise, Education and API plans, neither company trains on your
+              content
+        \item Both have a private mode that is never trained on: Incognito, and Temporary
+              Chats
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+% Training choice and retention are SEPARATE controls. Turning training off is not a
+% deletion request. Consumer chats stay in the account until the user deletes them;
+% deletion then completes from back-end systems within ~30 days, subject to exceptions.
+% At OpenAI, training controls, chat history, Temporary Chat and deletion are four
+% different things. Do not present "opted out" as "not stored".
+\begin{frame}{Turning Training Off Is Not Deleting Anything}
+    \begin{itemize}
+        \item These are separate controls, and people routinely assume they are one
+        \item Opting out of training stops future models learning from your chats
+        \item It does not remove the chats. They sit in your account until you delete them
+        \item Deletion then works through the back end over about a month, with exceptions
+        \item At OpenAI there are four different things here: training, history, temporary
+              chats, and deletion
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+% Anthropic trap: a thumbs up/down click sends the ENTIRE conversation into a 5-year store
+%   that may be used for training, REGARDLESS of your setting. Also Fable 5 and Mythos 5
+%   retain prompts 30 days on every platform, overriding ZDR, no waiver.
+% OpenAI trap: memory can retain context beyond what the visible summary shows. Full removal
+%   requires deleting across chats, files, connected apps AND the summary. OpenAI states:
+%   "Sensitive information may appear in memory if you share it with ChatGPT."
+\begin{frame}{Two Traps Worth Knowing}
+    \begin{itemize}\setlength{\itemsep}{7pt}
+        \item Rating a Claude conversation with thumbs up or down sends the whole
+              conversation into a five-year store, whatever your training setting says
+        \begin{itemize}
+            \item Never rate a conversation that contains unpublished results
+        \end{itemize}
+        \item ChatGPT's memory can hold more than the summary you are shown
+        \begin{itemize}
+            \item Clearing it properly means chats, files, connected apps and the summary,
+                  separately
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+% [NEW]
+% Source: Ideas/Fall-2026/Session_Pool/Teaching_and_Learning/watermarking.md
+% Anthropic, 14 Aug 2026, to comply with the EU AI Act; signed the EU Code of Practice on
+%   Transparency of AI-Generated Content in July 2026 with ~190 other signatories.
+% Method is Google DeepMind's SynthID-Text: the key plus the preceding words settle which of
+%   several equally valid word choices is taken. Nothing added, no hidden characters, no
+%   extra tokens.
+% Returns A PROBABILITY THAT THE TEXT WAS GENERATED BY CLAUDE. It does not tell you whether
+%   text is human-written, whether another AI wrote it, or "wrote" vs "heavily edited".
+% Limits: short samples fail; sparser on factual passages; barely covers code; a full rewrite
+%   removes it; the detection API is in private preview for eligible organizations only.
+% NO false positive or false negative rates are published anywhere.
+% OpenAI reported to be following; xAI reported not to be; open-weight models cannot be bound.
+% !! Verify the OpenAI and xAI positions directly. Full treatment belongs to Session 4.
+\begin{frame}{Text Is Starting to Be Watermarked}
+    \begin{itemize}\setlength{\itemsep}{6pt}
+        \item A watermark is being added to Claude's output, to comply with European law
+        \item It works by steering which of several equally good words gets picked, so
+              nothing is added and nothing is visible
+        \item It answers one question: did Claude probably generate this
+        \item It fails on short passages, on factual writing, on code, and on anything
+              rewritten
+        \item So no watermark found is not evidence a person wrote it, and no error rate has
+              been published
+    \end{itemize}
+
+    \vspace{0.6em}
+    {\small \url{https://www.anthropic.com/news/claude-text-watermark}}
+\end{frame}
+
+% Only OpenAI: image generation and editing, full-duplex voice (GPT-Live-1), realtime speech
+%   API, transcription and TTS, embeddings API, open-weight models (Apache 2.0), an $8 tier,
+%   the GPT Store.
+% Only Anthropic: Claude Science (3D protein/genome rendering, HPC over SSH, Modal GPU
+%   submission, a reviewer agent that flags bad citations and figures that do not match their
+%   code, provenance), Claude Tag in Slack, Claude Design, Agent Teams, Skills on free,
+%   Dispatch, Routines' three triggers.
+\begin{frame}{What Only One Side Has}
+    \begin{itemize}\setlength{\itemsep}{6pt}
+        \item Only OpenAI: image generation, live two-way voice, speech and transcription,
+              embeddings, and open-weight models you can run yourself
+        \item Only Anthropic: Claude Science, which renders structures, submits jobs to a
+              cluster, and runs an agent that flags citations and figures that do not match
+              the code behind them
+        \item Also only Anthropic: Claude Design, an org identity in Slack, and separate
+              sessions that can pass findings to each other
+        \item If you need images or speech that settles it, and the same goes for job
+              submission and provenance
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+% Sora: app ended 26 Apr 2026, API ends 24 Sept 2026, no replacement.
+% Fine-tuning: closed to new users, job creation ends 6 Jan 2027, no GPT-5.x support.
+% Honest 2026 answer to "can I fine-tune on my corpus": not on a frontier model from either
+% vendor. Use prompt caching, Projects, file search, Skills, or self-host gpt-oss.
+\begin{frame}{Two Advantages Being Withdrawn}
+    \begin{itemize}
+        \item Video generation is ending. The app closed in April and the interface closes
+              on 24 September, with no replacement
+        \item Fine-tuning is closing: no new users now, and it stops entirely in January
+        \item So if you were told you could train one of these on your own corpus, that is
+              no longer true of either company's frontier models
+        \item What is left instead: projects, caching, file search, packaged skills, or
+              self-hosting an open model
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+\begin{frame}{Questions to Ask About Your Own Work}
+    \begin{itemize}\setlength{\itemsep}{9pt}
+        \item Where do you fit in your own workflow? That is what sets the boundary of
+              what should be automated
+        \item What is actually in your account that you would not want in a training set?
+        \item For each tool you would connect, what is the worst thing it could do with
+              that access?
+        \item What are your guardrails against a confident wrong answer?
+        \item How do you check the output without reading every line of it?
+    \end{itemize}
+\end{frame}
+
+% [NEW]
+\begin{frame}{Where to Go From Here}
+    \begin{itemize}\setlength{\itemsep}{8pt}
+        \item Slides and materials: \url{https://github.com/dlab-berkeley/AI_Pulse}
+        \item Workshop suggestions: \url{https://forms.gle/x8KfejgCViE7t6iQA}
+        \item What Berkeley already gives you:
+              \url{https://life.berkeley.edu/ai-tools-for-berkeley-students}
+        \item D-Lab: \url{https://dlab.berkeley.edu}
+    \end{itemize}
+
+    \vspace{1em}
+    \begin{center}
+    Next: AI in the News, 29 September. Then Teaching, Learning and Collaborating,
+    13 October. Office hours next week, same day and time, on Zoom.
+    \end{center}
+\end{frame}
+
+% [NEW]
+% Updated 15 Sept with the sources behind the slides added this month. Sources: both vendors'
+% pricing and docs pages, the academic program pages, and the dates for Sora and
+% fine-tuning shutdowns.
+\begin{frame}{References}
+    \scriptsize
+    \begin{itemize}\setlength{\itemsep}{2.5pt}
+        \item Plans, models and prices: \url{claude.com/pricing},
+              \url{platform.claude.com/docs}, \url{chatgpt.com/pricing} and OpenAI's API
+              pricing page. All checked September 2026
+        \item Academic programs: OpenAI, ChatGPT for Academic Researchers, launched
+              29 July 2026; Anthropic, AI for Science and Team Plan for Scientists,
+              \url{claude.com/programs/team-plan-for-scientists}
+        \item Data and training defaults: both vendors' privacy and data-usage pages,
+              checked September 2026
+        \item Discontinuations: Sora API ends 24 September 2026; fine-tuning job creation
+              ends 6 January 2027; Atlas closed 9 August 2026
+        \item Berkeley's own tools: \url{life.berkeley.edu/ai-tools-for-berkeley-students}
+        \item Auto mode and the 89 percent figure: Anthropic, ``Auto mode is now the default
+              in Claude Code'', 7 August 2026. Red teaming by Apollo Research
+        \item Permission modes, loops and project retrieval:
+              \url{code.claude.com/docs}, \url{support.claude.com}
+        \item Memory and watermarking: Anthropic, 25 August and 14 August 2026. The
+              watermark uses Google DeepMind's SynthID-Text
+    \end{itemize}
+\end{frame}
+
+\end{document}
