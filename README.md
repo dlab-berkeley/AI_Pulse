@@ -20,7 +20,7 @@ In this workshop we will discuss how AI arrived at where it stands today, and wh
 
 ### Session 2 (September 15, 2026): The Major AI Ecosystems — Anthropic and OpenAI
 
-**Hands-on** | *Materials to follow.*
+**Hands-on** | [Materials](Workshops/Fall-2026/2026-09-15_AI_Ecosystems/)
 
 As AI subscriptions become a real expense rather than a token one, one of the first questions after deciding to get hands-on is which environment to sign up for. In this workshop we will compare the two largest, Anthropic's and OpenAI's, looking at what they have in common and where they genuinely differ, along with the practical details: what each plan costs, what comes for free, what each company is building beyond the chat window, and what they do with your data. Participants should leave knowing which ecosystem best fits their own work and budget, and how to get started.
 
