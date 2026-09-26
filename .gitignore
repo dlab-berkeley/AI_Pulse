@@ -80,21 +80,16 @@ Previous-Workshops/Spring-2026/2026-02-24_Teaching_Learning_Collaborating/slides
 Previous-Workshops/Spring-2026/2026-02-24_Teaching_Learning_Collaborating/slides/*.fls
 Previous-Workshops/Spring-2026/2026-02-24_Teaching_Learning_Collaborating/slides/*.synctex.gz
 
-# Session 7: include LaTeX source
-!Previous-Workshops/Spring-2026/2026-04-14_Running_Own_AI/slides/*.tex
-!Previous-Workshops/Spring-2026/2026-01-27_Claude_Code_Workshop/slides/*.tex
-!Previous-Workshops/Spring-2026/2026-02-10_Scientific_AI/slides/*.tex
-!Previous-Workshops/Spring-2026/2026-04-28_Whats_New_in_AI/slides/*.tex
-
-# Fall 2026: publish LaTeX source for all sessions
-!Workshops/Fall-2026/**/slides/*.tex
+# STANDING RULE: LaTeX source is never published. The global *.tex rule at the top of this
+# file covers it, and there are deliberately no un-ignore lines for slides/*.tex anywhere.
+# The repository publishes compiled PDFs only. Do not add exceptions.
 
 # Session 1: the pre-rebuild draft deck stays local (must sit AFTER the Fall-2026 un-ignore)
 Workshops/Fall-2026/2026-09-01_State_of_AI/slides/workshop_slides_draft.*
 
-# Session 3: unfinished draft stays local until it is delivered
-# (must sit AFTER the Fall-2026 un-ignore above)
-Workshops/Fall-2026/2026-09-29_AI_in_the_News/
+# Session 3: published 26 Sept 2026. The Anthropic help-centre screenshot stays local
+# (image licence unresolved; the compiled PDF still embeds it).
+Workshops/Fall-2026/2026-09-29_AI_in_the_News/slides/cowork_chat_merge.png
 
 # Session 4: description only, no materials yet. Stays local until the session is built.
 Workshops/Fall-2026/2026-10-13_Teaching_Learning_Collaborating/

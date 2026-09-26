@@ -7,7 +7,6 @@ A revisit of the Session 3 material, focused on **NotebookLM**: Google's source-
 ## Key Files
 
 - `slides/workshop_slides.pdf`: Compiled slides (24 pages)
-- `demos/demo4_exam_creation/`: Sample exam materials used in the exam-creation demo
 - `demos/demo9_pre_paper_organizer/`: Sample papers used in the literature-organization demo
 
 ## Format

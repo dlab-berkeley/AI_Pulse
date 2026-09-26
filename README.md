@@ -26,7 +26,7 @@ As AI subscriptions become a real expense rather than a token one, one of the fi
 
 ### Session 3 (September 29, 2026): AI in the News
 
-**Wide-view** | *Materials to follow.*
+**Wide-view** | [Materials](Workshops/Fall-2026/2026-09-29_AI_in_the_News/)
 
 In just a few years, AI went from a novelty you tried online to a fixture in the news. In this workshop we will go through a handful of the most consequential AI stories of the past year, from stand-offs with defence agencies to models breaking containment, unpacking the technical terms and following each one through to how it actually ended. For each we will propose a set of open questions, ethical, social and political, and open the floor. Participants should leave with a clear picture of stories they may only have half-followed, and with a range of views on what those stories mean, gathered from across the campus community.
 
@@ -42,16 +42,13 @@ Each workshop is a self-contained folder:
 Workshops/<Season-Year>/<YYYY-MM-DD>_<Workshop_Name>/
 ├── README.md                   # what the session covered
 ├── slides/
-│   ├── workshop_slides.tex     # LaTeX Beamer source
 │   └── workshop_slides.pdf     # compiled slides
 ├── demos/                      # data, scripts, prompts and codebooks used live
 ├── dry_run_output.md           # pre-generated demo output, in case a live demo fails
 └── SOURCE.md                   # where to get external data not tracked here
 ```
 
-Not every session has every file. Wide-view sessions carry no `demos/`, and only some sessions publish their LaTeX source.
-
-Slides are built with `pdflatex workshop_slides.tex` from inside a session's `slides/` directory.
+Not every session has every file. Wide-view sessions carry no `demos/`.
 
 ---
 
