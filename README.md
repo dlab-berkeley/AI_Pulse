@@ -30,6 +30,12 @@ As AI subscriptions become a real expense rather than a token one, one of the fi
 
 In just a few years, AI went from a novelty you tried online to a fixture in the news. In this workshop we will go through a handful of the most consequential AI stories of the past year, from stand-offs with defence agencies to models breaking containment, unpacking the technical terms and following each one through to how it actually ended. For each we will propose a set of open questions, ethical, social and political, and open the floor. Participants should leave with a clear picture of stories they may only have half-followed, and with a range of views on what those stories mean, gathered from across the campus community.
 
+### Session 4 (October 13, 2026): AI for Teaching, Learning and Collaborating
+
+**Hands-on** | [Materials](Workshops/Fall-2026/2026-10-13_Teaching_Learning_Collaborating/)
+
+This workshop looks at how AI is changing three everyday bottlenecks of academic life: learning, teaching, and working with other people. We start from the problems rather than the tools, then work through each one using Gemini Notebook (formerly NotebookLM) and others, with real course and research materials. We close on the question every instructor now faces, which is no longer whether students use AI but what to do about it. Participants should leave with workflows they can use on Monday.
+
 *More sessions to be announced.*
 
 ---

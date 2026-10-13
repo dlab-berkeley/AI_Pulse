@@ -91,5 +91,15 @@ Workshops/Fall-2026/2026-09-01_State_of_AI/slides/workshop_slides_draft.*
 # (image licence unresolved; the compiled PDF still embeds it).
 Workshops/Fall-2026/2026-09-29_AI_in_the_News/slides/cowork_chat_merge.png
 
-# Session 4: description only, no materials yet. Stays local until the session is built.
-Workshops/Fall-2026/2026-10-13_Teaching_Learning_Collaborating/
+# Session 4: published 13 Oct 2026. Slides PDF, README and the demo kits (prompts, instructions,
+# synthetic source PDFs). Stay local: dry runs, presenter keys and exam inventories, NOTEBOOKS.md
+# (personal account details), LaTeX and build/verify scripts for the synthetic documents, the superseded
+# lab-manual demo, and the dry-run screenshots.
+Workshops/Fall-2026/2026-10-13_Teaching_Learning_Collaborating/demos/NOTEBOOKS.md
+Workshops/Fall-2026/2026-10-13_Teaching_Learning_Collaborating/demos/*/tex/
+Workshops/Fall-2026/2026-10-13_Teaching_Learning_Collaborating/demos/*/verify_DEF/
+Workshops/Fall-2026/2026-10-13_Teaching_Learning_Collaborating/demos/demo6_lab_manual/
+Workshops/Fall-2026/2026-10-13_Teaching_Learning_Collaborating/slides/screens/
+Workshops/Fall-2026/2026-10-13_Teaching_Learning_Collaborating/demos/*/DRY_RUN.md
+Workshops/Fall-2026/2026-10-13_Teaching_Learning_Collaborating/demos/*/PRESENTER_KEY*.md
+Workshops/Fall-2026/2026-10-13_Teaching_Learning_Collaborating/demos/*/INVENTORY_*.md
