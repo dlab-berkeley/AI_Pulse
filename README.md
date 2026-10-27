@@ -36,6 +36,12 @@ In just a few years, AI went from a novelty you tried online to a fixture in the
 
 This workshop looks at how AI is changing three everyday bottlenecks of academic life: learning, teaching, and working with other people. We start from the problems rather than the tools, then work through each one using Gemini Notebook (formerly NotebookLM) and others, with real course and research materials. We close on the question every instructor now faces, which is no longer whether students use AI but what to do about it. Participants should leave with workflows they can use on Monday.
 
+### Session 5 (October 27, 2026): AI in Science: Workflows
+
+**Wide-view** | [Materials](Workshops/Fall-2026/2026-10-27_AI_in_Science_Workflows/)
+
+We walk through recent cases where researchers used AI to do real scientific work, following each one through the whole workflow: what made the problem a good fit in the first place, how the work was broken into pieces, what guardrails were put around it, what a person still had to check by hand, and where things went wrong. The cases come from across the disciplines by design. What transfers between fields is the task you hand to the AI, not the research question it sits inside, so the most useful idea of the session may well come from a field that is not your own. Participants should leave with a set of approaches they can map onto their own work, and a better sense of which of their problems are worth trying this on.
+
 *More sessions to be announced.*
 
 ---
