@@ -13,8 +13,8 @@ The hands-on counterpart to Session 5. Five research tasks, one tool shown in de
 | Quick answers with sources | Perplexity | Gemini Deep Research |
 | Academic literature | Consensus | Google Scholar Labs, Elicit, Undermind, JSTOR's AI tool |
 | Data analysis | Colab Data Science Agent | Coding agents: Claude Code, Codex, Gemini CLI |
-| Writing and checking | Codex | Overleaf, Gemini Canvas |
 | Sensitive data | LM Studio | Ollama |
+| Writing and checking | Codex | Overleaf, Gemini Canvas |
 
 The deck closes with what has changed in last spring's tools. Every prompt used in the demos is on the slides.
 
