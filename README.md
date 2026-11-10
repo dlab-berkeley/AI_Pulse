@@ -42,6 +42,12 @@ This workshop looks at how AI is changing three everyday bottlenecks of academic
 
 We walk through recent cases where researchers used AI to do real scientific work, following each one through the whole workflow: what made the problem a good fit in the first place, how the work was broken into pieces, what guardrails were put around it, what a person still had to check by hand, and where things went wrong. The cases come from across the disciplines by design. What transfers between fields is the task you hand to the AI, not the research question it sits inside, so the most useful idea of the session may well come from a field that is not your own. Participants should leave with a set of approaches they can map onto their own work, and a better sense of which of their problems are worth trying this on.
 
+### Session 6 (November 10, 2026): AI in Science: Tools
+
+**Hands-on** | [Materials](Workshops/Fall-2026/2026-11-10_AI_in_Science_Tools/)
+
+We walk through the AI tools researchers can use today across a whole project: searching and screening the literature, asking questions of a paper, turning data into working analysis code, and drafting and formatting the write-up. At each step we run a real research task with tools that are free or cheap, and show where each one helps, where it goes wrong, and what it costs. Participants should leave knowing which tools they can start using this week, and how to fit them into the way they already work.
+
 *More sessions to be announced.*
 
 ---
