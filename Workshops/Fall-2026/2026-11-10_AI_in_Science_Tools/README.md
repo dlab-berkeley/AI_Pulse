@@ -26,4 +26,4 @@ slides/workshop_slides.pdf    # Compiled slides
 
 ## Status
 
-31 slides. All tools were tested on 9 and 10 November 2026; free-tier limits and plan names change often.
+32 slides. All tools were tested on 9 and 10 November 2026; free-tier limits and plan names change often. Updated 15 November 2026 with a slide on the free AI tools in Berkeley's Overleaf plan, suggested by Elliott Smith (UC Berkeley Library).
