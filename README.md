@@ -48,6 +48,12 @@ We walk through recent cases where researchers used AI to do real scientific wor
 
 We walk through the AI tools researchers can use today across a whole project: searching and screening the literature, asking questions of a paper, turning data into working analysis code, and drafting and formatting the write-up. At each step we run a real research task with tools that are free or cheap, and show where each one helps, where it goes wrong, and what it costs. Participants should leave knowing which tools they can start using this week, and how to fit them into the way they already work.
 
+### Session 7 (November 24, 2026): AI Past the Basics
+
+**Wide-view** | [Materials](Workshops/Fall-2026/2026-11-24_AI_Past_the_Basics/)
+
+Everyone knows how to open a chat window and ask a question. Fewer people know why the same tool can give a sharp answer one day and a careless one the next. In this workshop we look at how these models behave in practice, from long conversations that quietly get worse to a tendency to agree with whoever is asking, and at simple habits that make their answers more reliable. We then go through a handful of named techniques you can apply yourself, such as asking several times and taking the majority, combining specialised agents into one answer, and having one model review another. Participants should leave with practical ways to get better and more trustworthy results from the tools they already use.
+
 *More sessions to be announced.*
 
 ---
